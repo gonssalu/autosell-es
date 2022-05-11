@@ -1,0 +1,9 @@
+Vehicle
+VehiclePart
+Event
+Client
+Transaction
+
+Location
+LocationType
+Period
