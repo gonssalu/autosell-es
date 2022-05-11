@@ -1,0 +1,3 @@
+Todos os carros usados que temos vêm de um cliente?
+Os pedidos de peças são uma lista de peças cada uma com a sua quantidade? ou uma peça com uma quantidade é um pedido em si?
+Os pedidos são da sede para a filial, vice-versa ou ambas?
