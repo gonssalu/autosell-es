@@ -2,7 +2,7 @@ Requisitos não funcionais:
     - Entregar a primeira fase no dia 21 de Maio.
     - Entregar a segunda fase no dia 27 de Junho.
     - O grupo tem de ser formado por três elementos.
-    
+
 Requisitos funcionais:
     - Registar os veículos que estão estacionados em cada local.
     - Capacidade de registar 100 veículos em cada filial.
@@ -11,3 +11,10 @@ Requisitos funcionais:
     - Todas as peças têm de ter um número mínimo,
         o número mínimo de uma peça numa filial tem de ser sempre menor que o número minimo na sede.
     - A possibilidade de requisitar uma quantidade de peças entre filiais / sede.
+    - A possibilidade de registar eventos em que se coloca um conjunto de veiculos em exposição numa das filiais
+   - Registar eventos em que se coloca um conjunto de veiculos em exposição numa das filiais ou fora de uma filial
+   - Decidir para onde vão os veículos ao finalizar um evento
+   - Registar as transações de compra e venda de veículos a clientes
+   - Registar as informações dos clientes
+   - Visualizar o histórico de transações
+   - Permitir a visualização de diferentes estatísticas num dado período 

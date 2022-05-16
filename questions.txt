@@ -1,3 +1,9 @@
 Todos os carros usados que temos vêm de um cliente?
 Os pedidos de peças são uma lista de peças cada uma com a sua quantidade? ou uma peça com uma quantidade é um pedido em si?
 Os pedidos são da sede para a filial, vice-versa ou ambas?
+É possível mover carros entre as filiais?
+A empresa compra carros a fornecedores ou apenas em segunda-mão?
+É suposto registar as reparações nas filiais, ou apenas que ouve uma mudança no stock de peças?
+Ao preparar os veiculos que o cliente comprou utiliza-se peças? E que peças? São sempre as mesmas para um tipo de veículo/veículo ou variam?
+O que se faz apos a venda de um veículo, elimina-se o registo desse veículo?? E remover peças? Cliente?etc?
+Deve-se deixar editar as informacoes de um veiculo?Peça?
