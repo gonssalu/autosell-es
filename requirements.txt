@@ -8,8 +8,7 @@ Requisitos funcionais:
     - Capacidade de registar 100 veículos em cada filial.
     - Capacidade de registar 4500 veículos numa sede.
     - Registar o armazenamento de peças em cada local.
-    - Todas as peças têm de ter um número mínimo,
-        o número mínimo de uma peça numa filial tem de ser sempre menor que o número minimo na sede.
+    - Todas as peças têm de ter um número mínimo, o número mínimo de uma peça numa filial tem de ser sempre menor que o número minimo na sede.
     - A possibilidade de requisitar uma quantidade de peças entre filiais / sede.
     - A possibilidade de registar eventos em que se coloca um conjunto de veiculos em exposição numa das filiais
    - Registar eventos em que se coloca um conjunto de veiculos em exposição numa das filiais ou fora de uma filial
@@ -17,4 +16,4 @@ Requisitos funcionais:
    - Registar as transações de compra e venda de veículos a clientes
    - Registar as informações dos clientes
    - Visualizar o histórico de transações
-   - Permitir a visualização de diferentes estatísticas num dado período 
+   - Permitir a visualização de diferentes estatísticas num dado período
