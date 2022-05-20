@@ -20,3 +20,10 @@ Editar as informações de um cliente
 
 Ver o histórico de transações
 Ver as estátisticas num periodo de tempo
+
+Editar um Veiculo
+Editar um Cliente
+Editar uma Peça
+Editar uma Transação
+Eliminar um Veiculo/Cliente/Peça/Transação (são três separados)
+Registar reparação do veículo
