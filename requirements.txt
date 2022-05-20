@@ -17,3 +17,4 @@ Requisitos funcionais:
    - Registar as informações dos clientes
    - Visualizar o histórico de transações
    - Permitir a visualização de diferentes estatísticas num dado período
+   - Registar uma reparação de um veículo
