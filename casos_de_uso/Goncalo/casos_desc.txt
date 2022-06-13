@@ -1,11 +1,15 @@
-Agendar Evento
-Editar Evento
-Remover Evento
-Consultar Evento
-Finalizar Evento
-Ver estatísticas
-Reparar Veículos
-Transferir Veículos
+Agendar Evento          (OK)
+Editar Evento           (OK)
+Remover Evento          (OK)          
+Consultar Evento        
+Finalizar Evento        
+Ver estatísticas        
+Reparar Veículos        
+Transferir Veículos     
+Remover Cliente         (OK)
+
+
+
 
 Agendar Evento:
 
@@ -19,7 +23,7 @@ Agendar Evento:
 
 5: O utilizador preenche os campos com os dados do evento e carrega no botão "Agendar".
 
-6: O sistema valida os dados inseridos, cria um novo evento com esses dados, mostra uma mensagem de sucesso e fecha a janela "Agendar Evento".
+6: O sistema valida os dados inseridos, cria um novo evento com esses dados, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Agendar Evento".
 
 Caminhos alternativos: 
 
@@ -33,11 +37,19 @@ Caminhos alternativos:
 5.3: O utilizador não preenche os campos obrigatórios e clica no botão "Agendar".
 5.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
 
+5.4: O utilizador seleciona a opção "Fora de uma loja"
+5.4.1: O sistema desativa a dropdown "Loja" e ativa o campo "Outro local"
+
+5.5: O utilizador desseleciona a opção "Fora de uma loja"
+5.5.1: O sistema ativa a dropdown "Loja" e desativa o campo "Outro local"
+
 6.1: Os dados inseridos são inválidos.
 6.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
 
 6.2: Ocorreu um erro ao guardar os dados.
 6.2.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
+
+
 
 
 Caso auxiliar "Selecionar Veículos":
@@ -75,3 +87,68 @@ Caminhos alternativos:
 5.2.2 / 3.1.2.2.2: O sistema desativa o botão que estiver ativado agora e ativa o outro. (Entre os botões "Selecionar" e "Desselecionar")
 5.2.3: O caso de uso continua no ponto 3.1.2
 3.1.2.2.3: O caso de uso continua no ponto 5
+
+
+
+Editar Evento:
+
+1: O utilizador seleciona um evento na lista de eventos e clica no botão "Editar" no ecrã "Gerir Eventos".
+
+2: O sistema abre a janela "Editar Evento".
+
+3: O utilizador preenche os campos com os dados do evento e carrega no botão "Agendar".
+
+4: O sistema valida os dados inseridos, guarda-os, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Editar Evento".
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Editar" sem selecionar um evento na lista de eventos.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+3.1: O utilizador clica no botão "Voltar"
+3.1.1: O sistema fecha a janela "Editar Evento".
+
+3.2: O utilizador clica no botão "Associar Veículos" no ecrã "Editar Evento".
+3.2.1: O sistema invoca o caso auxiliar "Selecionar Veículos".
+3.2.2: O caso de uso continua no ponto 5.
+
+3.3: O utilizador não preenche os campos obrigatórios e clica no botão "Confirmar".
+3.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
+
+4.1: Os dados inseridos são inválidos.
+4.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
+
+4.2: Ocorreu um erro ao guardar os dados.
+4.2.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
+
+
+
+
+Remover Evento:
+
+1: O utilizador seleciona um evento na lista de eventos e clica no botão "Apagar" no ecrã "Gerir Eventos".
+
+2: O sistema elimina o Evento selecionado, remove-o da lista de eventos no ecrã "Gerir Eventos" e mostra uma mensagem de sucesso
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Apagar" sem selecionar um evento na lista de eventos.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+
+
+
+Remover Cliente:
+
+1: O utilizador clica no botão "Clientes" na janela principal.
+
+2: O sistema mostra o ecrã "Gerir Clientes" na janela principal.
+
+3: O utilizador seleciona um cliente na lista de clientes e clica no botão "Apagar" no ecrã "Gerir Clientes".
+
+4: O sistema elimina o Cliente selecionado, remove-o da lista de clientes no ecrã "Gerir Clientes" e mostra uma mensagem de sucesso.
+
+Caminhos alternativos: 
+
+3.1: O utilizador clica no botão "Apagar" sem selecionar um cliente na lista de clientes.
+3.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 3.
