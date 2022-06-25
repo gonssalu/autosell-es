@@ -18,7 +18,6 @@
 2. O sistema apresenta o ecrã "Gerir Veículos" na janela principal
 3. O utilizador seleciona o veículo que deseja consultar e clica no botão "Consultar"
 4. O sistema abre a janela "Consultar Veículo" com os dados do veículo
-5. O utilizador consulta os dados do veículo
 ```
 
 ### Caminhos alternativos
