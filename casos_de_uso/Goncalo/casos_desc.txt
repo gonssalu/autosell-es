@@ -1,12 +1,44 @@
 Agendar Evento          (OK)
 Editar Evento           (OK)
 Remover Evento          (OK)          
-Consultar Evento        
-Finalizar Evento        
-Ver estatísticas        
-Reparar Veículos        
-Transferir Veículos     
+Consultar Evento        (OK) 
+Finalizar Evento        (OK)
+Ver estatísticas        (OK)
+Reparar Veículos        (OK)
+Transferir Veículos     (OK)
 Remover Cliente         (OK)
+
+
+
+
+Caso auxiliar "Janela Agendar Evento":
+
+1: O sistema abre a janela "Agendar Evento"
+
+2: O utilizador preenche os campos com os dados do evento e carrega no botão "Agendar".
+
+3: O sistema valida os dados inseridos.
+
+Caminhos alternativos:
+
+2.1: O utilizador clica no botão "Voltar"
+2.1.1: O sistema fecha a janela "Agendar Evento".
+
+2.2: O utilizador clica no botão "Associar Veículos" no ecrã "Agendar Evento".
+2.2.1: O sistema invoca o caso auxiliar "Selecionar Veículos".
+2.2.2: O caso de uso continua no ponto 5.
+
+2.3: O utilizador não preenche os campos obrigatórios e clica no botão "Agendar".
+2.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
+
+2.4: O utilizador seleciona a opção "Fora de uma loja"
+2.4.1: O sistema desativa a dropdown "Loja" e ativa o campo "Outro local"
+
+2.5: O utilizador desseleciona a opção "Fora de uma loja"
+2.5.1: O sistema ativa a dropdown "Loja" e desativa o campo "Outro local"
+
+3.1: Os dados inseridos são inválidos.
+3.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
 
 
 
@@ -19,35 +51,9 @@ Agendar Evento:
 
 3: O utilizador clica no botão "Agendar" no ecrã "Gerir Eventos".
 
-4: O sistema abre a janela "Agendar Evento".
+4: O caso auxiliar "Janela Agendar Evento" é invocado.
 
-5: O utilizador preenche os campos com os dados do evento e carrega no botão "Agendar".
-
-6: O sistema valida os dados inseridos, cria um novo evento com esses dados, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Agendar Evento".
-
-Caminhos alternativos: 
-
-5.1: O utilizador clica no botão "Voltar"
-5.1.1: O sistema fecha a janela "Agendar Evento".
-
-5.2: O utilizador clica no botão "Associar Veículos" no ecrã "Agendar Evento".
-5.2.1: O sistema invoca o caso auxiliar "Selecionar Veículos".
-5.2.2: O caso de uso continua no ponto 5.
-
-5.3: O utilizador não preenche os campos obrigatórios e clica no botão "Agendar".
-5.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
-
-5.4: O utilizador seleciona a opção "Fora de uma loja"
-5.4.1: O sistema desativa a dropdown "Loja" e ativa o campo "Outro local"
-
-5.5: O utilizador desseleciona a opção "Fora de uma loja"
-5.5.1: O sistema ativa a dropdown "Loja" e desativa o campo "Outro local"
-
-6.1: Os dados inseridos são inválidos.
-6.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
-
-6.2: Ocorreu um erro ao guardar os dados.
-6.2.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
+5: O sistema cria um novo evento com esses dados, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Agendar Evento".
 
 
 
@@ -79,6 +85,9 @@ Caminhos alternativos:
 3.1.3: O sistema move o veículo selecionado da lista de veículos selecionados para a lista de veículos disponíveis, desseleciona o veículo e desativa o botão "Desselecionar".
 3.1.4: Continua no ponto 7 do caso de uso
 
+3.2: O utilizador clica no botão voltar.
+3.2.1: O sistema fecha esta janela.
+
 5.1 / 3.1.2.1: O utilizador desseleciona o veículo que selecionou.
 5.1.1 / 3.1.2.1.1: O sistema desativa o botão que tinha ativado previamente e o caso de uso continua no ponto 3. 
 
@@ -90,38 +99,20 @@ Caminhos alternativos:
 
 
 
+
+
 Editar Evento:
 
 1: O utilizador seleciona um evento na lista de eventos e clica no botão "Editar" no ecrã "Gerir Eventos".
 
-2: O sistema abre a janela "Editar Evento".
+2: O caso auxiliar "Janela Agendar Evento" é invocado.
 
-3: O utilizador preenche os campos com os dados do evento e carrega no botão "Agendar".
-
-4: O sistema valida os dados inseridos, guarda-os, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Editar Evento".
+3: O sistema recebe os dados da janela, guarda-os, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Editar Evento".
 
 Caminhos alternativos: 
 
 1.1: O utilizador clica no botão "Editar" sem selecionar um evento na lista de eventos.
 1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
-
-3.1: O utilizador clica no botão "Voltar"
-3.1.1: O sistema fecha a janela "Editar Evento".
-
-3.2: O utilizador clica no botão "Associar Veículos" no ecrã "Editar Evento".
-3.2.1: O sistema invoca o caso auxiliar "Selecionar Veículos".
-3.2.2: O caso de uso continua no ponto 5.
-
-3.3: O utilizador não preenche os campos obrigatórios e clica no botão "Confirmar".
-3.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
-
-4.1: Os dados inseridos são inválidos.
-4.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
-
-4.2: Ocorreu um erro ao guardar os dados.
-4.2.1: O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso.
-
-
 
 
 Remover Evento:
@@ -152,3 +143,93 @@ Caminhos alternativos:
 
 3.1: O utilizador clica no botão "Apagar" sem selecionar um cliente na lista de clientes.
 3.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 3.
+
+
+
+
+Consultar Evento:
+
+1: O utilizador seleciona um evento na lista de eventos e clica no botão "Consultar" no ecrã "Gerir Eventos".
+
+2: O caso auxiliar "Janela Agendar Evento" é invocado.
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Consultar" sem selecionar um evento na lista de eventos.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+
+
+
+Ver Estatísticas:
+
+1: O utilizador clica no botão "Estatísticas" na janela principal.
+
+2: O sistema mostra o ecrã "Estatísticas" na janela principal.
+
+
+
+
+Finalizar Evento:
+
+1: O utilizador seleciona um evento na lista de eventos, define o local para onde quer que os veículos prossigam e clica no botão "Terminar e Recolher Veículos" no ecrã "Gerir Eventos".
+
+2: O sistema define o evento como terminado e guarda a nova localização dos veículos.
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Terminar e Recolher Veículos" sem selecionar um evento na lista de eventos.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+1.2: O utilizador clica no botão "Terminar e Recolher Veículos" sem preencher o novo local para os veículos.
+1.2.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+1.3: O utilizador altera o destino dos veículos entre "Loja" e "Outro evento".
+1.3.1: O sistema preenche a dropdown "todas as lojas/eventos" com todas as lojas ou todos os eventos, que tenham espaço para todos os veículos, conforme a opção selecionada anteriormente.
+
+
+
+
+Reparar Veículo:
+
+1: O utilizador clica no botão "Veículos" na janela principal.
+
+2: O sistema mostra o ecrã "Gerir Veículos" na janela principal.
+
+3: O utilizador clica no botão "Reparar" no ecrã "Gerir Veículos".
+
+4: É invocado o caso auxiliar "Selecionar Veículos" até ao ponto 6 (incluindo) com algumas pequenas mudanças:
+    - O nome da janela é "Reparar Veículo"
+    - Preencheendo as duas listas com a "lista de peças na loja onde está o veículo" e a "lista de peças a utilizar na reparação", respetivamente.
+    - Ao adicionar à lista “Peças a utilizar” é pedida uma quantidade através de um input dialog.
+    - Ao remover é pedida uma quantidade (default: todas as adicionadas) através de um input dialog
+
+5: O utilizador clica no botão confirmar.
+
+6: O sistema atualiza o stock de peças conforme as que foram atualizadas e fecha a janela "Reparar Veículo.
+
+Caminhos alternativos:
+
+4.1: O utilizador insere uma quantidade inválida.
+4.1.1: O sistema mostra uma mensagem de erro e pede para reinserir a quantidade desejada.
+
+
+
+
+Transferir Veículo:
+
+1: O utilizador clica no botão "Reparar" no ecrã "Gerir Veículos".
+
+2: É invocado o caso auxiliar "Selecionar Veículos" até ao ponto 6 (incluindo) com algumas pequenas mudanças:
+    - O nome da janela é "Transferir Veículos"
+    - Uma dropdown por cima de cada uma das listas com a lista de todas as lojas existentes, ao selecionar uma loja a lista em baixo é atualizada com todos os veículos existentes nessa loja, e a outra dropdown tem a opção dessa mesma loja desativada.
+    - Preencheendo as duas listas com a "lista de veículos na loja x" e a "lista de veículos na loja y", respetivamente.
+
+3: O utilizador clica no botão confirmar.
+
+4: O sistema atualiza as novas localizações dos veículos movidos entre as duas lojas selecionadas.
+
+Caminhos alternativos:
+
+4.1: Uma das lojas não tem espaço para os novos veículos
+4.1.1: O sistema mostra uma mensagem de erro e cancela a operação.
