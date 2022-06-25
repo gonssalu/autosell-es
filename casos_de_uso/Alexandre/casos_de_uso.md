@@ -23,8 +23,8 @@
 ### Caminhos alternativos
 
 ```css
-5.1   O utilizador clica no botão "Voltar"
-5.1.1 O sistema fecha a janela "Consultar Veículo"
+3.1   O utilizador clica no botão "Consultar" sem selecionar um veículo
+3.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 3 do caso de uso
 ```
 
 ## Caso de uso "Adicionar veículo"
