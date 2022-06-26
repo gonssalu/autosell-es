@@ -1,0 +1,172 @@
+Consultar Peças          
+Adicionar Peças           
+Editar Peças                   
+Remover Peças        
+Realizar pedido De Peças        
+Ver pedidos De Peças        
+Aceitar Pedidos de Peças        
+Eliminar Pedidos de Peças     
+Consultar Cliente        
+
+
+Consultar Peças:
+
+1: O utilizador seleciona uma peça na lista de peças e clica no botão "Consultar" no ecrã "Gerir Peças".
+
+2: O caso auxiliar "Janela Adicionar Peça" é invocado.
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Consultar" sem selecionar uma paça na lista de peças.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+
+
+Caso auxiliar "Adicionar Peças":
+
+1: O sistema abre a janela "Adicinar Peças"
+
+2: O utilizador preenche os campos com os dados da peça e carrega no botão "salvar".
+
+3: O sistema valida os dados inseridos.
+
+Caminhos alternativos:
+
+2.1: O utilizador clica no botão "Voltar"
+2.1.1: O sistema fecha a janela "Adicinar Peças".
+
+2.2: O utilizador não preenche os campos obrigatórios e clica no botão "Salvar".
+2.2.1: O sistema mostra uma mensagem de erro e volta á janela "Gerir Peças".
+
+3.1: Os dados inseridos são inválidos.
+3.1.1: O sistema mostra uma mensagem de erro e volta á janela "Gerir Peças".
+
+
+
+Caso auxiliar "Pedido De Peças":
+
+1: O sistema abre a janela "Pedir Peças"
+
+2: O sistema preenche a lista de peças com todas as peças incluidos na lista passada
+ a esta janela.
+
+3: O utilizador seleciona a loja requerente e a loja fornecedora.
+
+4: O utilizador move a peça selecionada na lista de peças para a lista de peças do pedido.
+4.1: O sistema mostra a janela "Quantidade peça".
+4.1.1: o ultizador preenche o campo de quantidade.
+
+5: O utilizador clica no botão "Pedir" na janela "Pedir Peças".
+
+6: O sistema guarda a lista de peças selecionados e fecha a janela "Pedir Peças".
+
+
+Caminhos alternativos:
+
+1.1: O utilizador clica no botão voltar.
+1.2.1: O sistema fecha esta janela.
+
+2.1:  O utilizador não seleciona uma loja requerente nem uma loja fornecedora
+2.1.1: O sistema mostra uma mensagem de erro
+
+3.1:  O utilizador não seleciona uma peça na lista de peças
+3.1.1: O sistema mostra uma mensagem de erro
+
+4.1:  O utilizador não preenche o campo quantidade na janela "Quantidade peça"
+4.1.1: O sistema mostra uma mensagem de erro
+
+5.1: O utilizador clica no botão voltar.
+5.1.1: O sistema fecha esta janela e volta á janela "Gerir Peças"
+
+      
+
+Ver pedidos De Peças
+
+1: O utilizador clica no botão "lista de pedidos" na janela "Gerir Peças".
+
+2: O sistema mostra a janela "Lista de Pedidos".
+
+Caminhos alternativos: 
+
+2.1: O utilizador clica no botão voltar.
+2.1.1: O sistema fecha esta janela e volta á janela "Gerir Peças"
+
+
+   
+Aceitar Pedidos de Peças  
+
+1: O utilizador clica no botão "lista de pedidos" na janela "Gerir Peças"
+
+2: O sistema mostra a janela "Lista de Pedidos".
+
+3: O utilizador clica no botão aceitar.
+
+Caminhos alternativos: 
+
+2.1: O utilizador clica no botão voltar.
+2.1.1: O sistema fecha esta janela e volta á janela "Gerir Peças".
+
+
+
+Eliminar Pedidos de Peças 
+
+1: O utilizador clica no botão "lista de pedidos" na janela "Gerir Peças"
+
+2: O sistema mostra a janela "Lista de Pedidos".
+
+3: O utilizador clica no botão Eliminar.
+
+Caminhos alternativos: 
+
+2.1: O utilizador clica no botão voltar.
+2.1.1: O sistema fecha esta janela e volta á janela "Gerir Peças".
+
+
+
+Editar Peças:
+
+1: O utilizador seleciona uma peça na lista de peças e clica no botão "Editar" no ecrã "Gerir Peças".
+
+2: O caso auxiliar "Janela Adicionar Peças" é invocado.
+
+3: O sistema recebe os dados da janela, guarda-os, atualiza a lista de peças no ecrã "Gerir Peças", 
+mostra uma mensagem de sucesso e fecha a janela "Editar Peças".
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Editar" sem selecionar uma peça na lista de peças.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+
+
+Remover Peças:
+
+1: O utilizador seleciona uma peça na lista de peças e clica no botão "Apagar" no ecrã "Gerir Peças".
+
+2: O sistema elimina a peça selecionada, remove-a da lista de peças no ecrã "Gerir Peças" 
+e mostra uma mensagem de sucesso
+
+Caminhos alternativos: 
+
+1.1: O utilizador clica no botão "Apagar" sem selecionar uma peça na lista de peças.
+1.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
+
+
+
+
+Consultar Cliente:
+
+1: O utilizador clica no botão "Clientes" na janela principal.
+
+2: O sistema mostra o ecrã "Gerir Clientes" na janela principal.
+
+3: O utilizador seleciona um cliente na lista de clientes e clica no botão "Consultar" no ecrã "Gerir Clientes".
+
+4: O caso auxiliar "Janela Agendar Evento" é invocado.
+
+Caminhos alternativos: 
+
+3.1: O utilizador clica no botão "Consultar" sem selecionar um cliente na lista de clientes.
+3.1.1: O sistema mostra uma mensagem de erro e o caso de uso volta ao início do ponto 1.
+
