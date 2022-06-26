@@ -194,7 +194,6 @@
 ```css
 1. O utilizador clica no botão "Transações" na janela principal
 2. O sistema apresenta o ecrã "Transações" na janela principal
-3. O utilizador consulta o histórico de transações
 ```
 
 ## Caso de uso "Registar um cliente novo"
