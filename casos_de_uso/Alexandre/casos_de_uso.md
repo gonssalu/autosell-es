@@ -7,7 +7,7 @@
 - [Caso de uso "Vender veículo"](#caso-de-uso-vender-veículo)
 - [Caso de uso "Comprar veículo"](#caso-de-uso-comprar-veículo)
 - [Caso de uso "Troca de veículos"](#caso-de-uso-troca-de-veículos)
-- [Caso de uso "Ver histórico de transações"](#caso-de-uso-ver-histórico-de-transações)
+- [Caso de uso "Consultar transações"](#caso-de-uso-consultar-transações)
 - [Caso de uso "Registar um cliente novo"](#caso-de-uso-registar-um-cliente-novo)
 - [Caso de uso "Editar dados de um cliente"](#caso-de-uso-editar-dados-de-um-cliente)
 
@@ -189,7 +189,7 @@
 12.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
 ```
 
-## Caso de uso "Ver histórico de transações"
+## Caso de uso "Consultar transações"
 
 ```css
 1. O utilizador clica no botão "Transações" na janela principal
