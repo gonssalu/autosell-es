@@ -15,6 +15,17 @@ namespace autosell
         public AutoSell()
         {
             InitializeComponent();
+            // lboxVeiculos.DataSource = Dados.VEICULOS;
+            lboxVeiculos.Refresh();
+        }
+
+        private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
+        {
+            var dadosVeiculo = new DadosVeiculoForm();
+            dadosVeiculo.ShowDialog();
+
+            lboxVeiculos.DataSource = null;
+            // lboxVeiculos.DataSource = Dados.VEICULOS;
         }
     }
 }

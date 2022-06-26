@@ -14,6 +14,5 @@ namespace autosell
         public static List<Peca> PECAS = new();
         public static List<Transacao> TRANSACOES = new();
         public static Sede SEDE = new();
-
     }
 }

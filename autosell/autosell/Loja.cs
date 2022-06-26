@@ -10,11 +10,12 @@ namespace autosell
     {
         public String Nome { get; }
         public int TamanhoGaragem { get; }
-        
+
         public Loja(string nome, string morada, int tamanhoGaragem) : base(morada)
         {
             if (tamanhoGaragem > 100)
-                throw new ArgumentException("O tamanho da garagem de uma filial não pode exceder os 100 lugares.","TamanhoGaragem");
+                throw new ArgumentException("O tamanho da garagem de uma filial não pode exceder os 100 lugares.",
+                                            "TamanhoGaragem");
             Nome = nome;
             TamanhoGaragem = tamanhoGaragem;
         }
