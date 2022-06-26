@@ -210,7 +210,8 @@ namespace autosell
                 {
                     int ano = 2022 - i;
                     DateTime dt = new(ano, rn(1, 12), rn(1, 28));
-                    Evento evento = new(nomeEvento + " " + (ano).ToString(), GetRndMorada(), dt, dt);
+                    DateTime dt2 = new(ano, rn(dt.Month, 12), rn(dt.Day, 28));
+                    Evento evento = new(nomeEvento + " " + (ano).ToString(), GetRndMorada(), dt, dt2);
                     for (int j = 0; j < rn(1, 6); j++)
                         evento.Garagem.Add(GenVeiculo(evento));
                     Dados.EVENTOS.Add(evento);
