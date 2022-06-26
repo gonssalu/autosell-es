@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,28 @@ namespace autosell
 {
     public partial class DadosVeiculoForm : Form
     {
-        private int _lojaId;
+        private readonly int _lojaId;
+        private readonly int _veiculoId;
 
-        public DadosVeiculoForm(int lojaId)
+        public DadosVeiculoForm(int lojaId, int veiculoId = -1)
         {
             InitializeComponent();
 
             _lojaId = lojaId;
+            _veiculoId = veiculoId;
             cmbCombustivel.DataSource = Enum.GetValues(typeof(TipoCombustivel));
+
+            if (veiculoId == -1) return;
+
+            txtMarca.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].Marca;
+            txtModelo.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].Modelo;
+            txtAno.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].Ano.ToString();
+            txtCor.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].Cor;
+            txtKms.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].KmsPercorridos.ToString(CultureInfo.InvariantCulture);
+            txtPreco.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].Preco.ToString(CultureInfo.InvariantCulture);
+            txtNumDonos.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].NrDonos.ToString();
+            txtDonoAnterior.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].NomeDonoAnterior;
+            cmbCombustivel.SelectedItem = Dados.LOJAS[_lojaId].Garagem[veiculoId].Combustivel;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -59,7 +74,10 @@ namespace autosell
             var veiculo = new Veiculo(marca, modelo, ano, combustivel, cor, preco, kms, numDonos, donoAnterior, _lojaId);
 
             try {
-                Dados.LOJAS[_lojaId].Garagem.Add(veiculo);
+                if (_veiculoId == -1)
+                    Dados.LOJAS[_lojaId].Garagem.Add(veiculo);
+                else
+                    Dados.LOJAS[_lojaId].Garagem[_veiculoId] = veiculo;
             }
             catch (Exception ex) {
                 MessageBox.Show("Ocorreu um erro no registo do veículo: " + ex.Message, "Erro", MessageBoxButtons.OK,
