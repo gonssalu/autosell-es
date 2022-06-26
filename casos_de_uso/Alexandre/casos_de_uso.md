@@ -148,8 +148,10 @@
 5.1.1 O sistema fecha a janela "Comprar Veículo"
 7.1   O utilizador clica no botão "Novo cliente"
 7.1.1 O sistema invoca o caso de uso "Registar um cliente novo" a partir do ponto 4
-8.1   Ocorreu um erro ao guardar os dados.
+8.1   O utilizador não preenche os dados obrigatórios e clica no botão "Vender"
 8.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
+8.2   Ocorreu um erro ao guardar os dados.
+8.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 ```
 
 ## Caso de uso "Troca de veículos"
