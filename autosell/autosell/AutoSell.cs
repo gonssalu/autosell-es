@@ -33,18 +33,24 @@ namespace autosell
         private void AutoSell_Load(object sender, EventArgs e)
         {
             RandomHelper.PREENCHER();
-
             cmbLojas.DataSource = Dados.LOJAS;
         }
 
         private void cmbLojas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var veiculos = new List<Veiculo>();
+            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
+        }
 
-            foreach (var veiculo in Dados.LOJAS[cmbLojas.SelectedIndex].Garagem)
-                veiculos.Add(veiculo);
+        private void btnApagarVeiculo_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente apagar o veículo?", "Confirmação", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Exclamation) == DialogResult.No)
+                return;
 
-            lboxVeiculos.DataSource = veiculos;
+            var veiculo = (Veiculo) lboxVeiculos.SelectedItem;
+            Dados.LOJAS[cmbLojas.SelectedIndex].Garagem.Remove(veiculo);
+            lboxVeiculos.DataSource = null;
+            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
         }
     }
 }

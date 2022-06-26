@@ -70,5 +70,10 @@ namespace autosell
             MessageBox.Show("Veículo registado com sucesso", "Registo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

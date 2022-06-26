@@ -169,6 +169,7 @@
             this.btnApagarVeiculo.TabIndex = 1;
             this.btnApagarVeiculo.Text = "Apagar";
             this.btnApagarVeiculo.UseVisualStyleBackColor = true;
+            this.btnApagarVeiculo.Click += new System.EventHandler(this.btnApagarVeiculo_Click);
             // 
             // lboxVeiculos
             // 
