@@ -4,9 +4,9 @@
 - [Caso de uso "Adicionar veículo"](#caso-de-uso-adicionar-veículo)
 - [Caso de uso "Editar veículo"](#caso-de-uso-editar-veículo)
 - [Caso de uso "Remover veículo"](#caso-de-uso-remover-veículo)
-- [Caso de uso "Troca de veículos"](#caso-de-uso-troca-de-veículos)
 - [Caso de uso "Vender veículo"](#caso-de-uso-vender-veículo)
 - [Caso de uso "Comprar veículo"](#caso-de-uso-comprar-veículo)
+- [Caso de uso "Troca de veículos"](#caso-de-uso-troca-de-veículos)
 - [Caso de uso "Ver histórico de transações"](#caso-de-uso-ver-histórico-de-transações)
 - [Caso de uso "Registar um cliente novo"](#caso-de-uso-registar-um-cliente-novo)
 - [Caso de uso "Editar dados de um cliente"](#caso-de-uso-editar-dados-de-um-cliente)
@@ -95,35 +95,6 @@
 6.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 ```
 
-## Caso de uso "Troca de veículos"
-  
-```css
-1.  O utilizador clica no botão "Transações" na janela principal
-2.  O sistema apresenta o ecrã "Transações" na janela principal
-3.  O utilizador clica no botão "Troca" no ecrã "Transações"
-4.  O sistema abre a janela "Troca de Veículos"
-5.  O utilizador seleciona o veículo a enviar
-6.  O utilizador clica no botão "Registar Veículo" de modo a registar o veículo a receber
-7.  O sistema invoca o caso de uso "Adicionar veículo" a partir do ponto 4.
-8.  O utilizador seleciona o cliente alvo da troca, preenche o valor da troca e clica no botão "Preparar Veículo"
-9.  O sistema abre a janela "Preparar Veículo"
-10. O utilizador seleciona as peças a utilizar e clica no botão "Preparar"
-11. O sistema fecha a janela "Preparar Veículo"
-12. O utilizador clica no botão "Efetuar troca" na janela "Troca de Veículos"
-13. O sistema valida os dados inseridos, atualiza a lista de transações no ecrã "Transações", mostra uma mensagem de sucesso e fecha a janela "Troca de Veículos"
-```
-
-### Caminhos alternativos
-
-```css
-5.1    O utilizador clica no botão "Voltar"
-5.1.1  O sistema fecha a janela "Troca de Veículos"
-10.1   O utilizador clica no botão "Voltar"
-10.1.1 O sistema fecha a janela "Preparar Veículo"
-13.1   Os dados inseridos são inválidos
-13.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
-```
-
 ## Caso de uso "Vender veículo"
 
 ```css
@@ -175,6 +146,35 @@
 8.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 ```
 
+## Caso de uso "Troca de veículos"
+  
+```css
+1.  O utilizador clica no botão "Transações" na janela principal
+2.  O sistema apresenta o ecrã "Transações" na janela principal
+3.  O utilizador clica no botão "Troca" no ecrã "Transações"
+4.  O sistema abre a janela "Troca de Veículos"
+5.  O utilizador seleciona o veículo a enviar
+6.  O utilizador clica no botão "Registar Veículo" de modo a registar o veículo a receber
+7.  O sistema invoca o caso de uso "Adicionar veículo" a partir do ponto 4.
+8.  O utilizador seleciona o cliente alvo da troca, preenche o valor da troca e clica no botão "Preparar Veículo"
+9.  O sistema abre a janela "Preparar Veículo"
+10. O utilizador seleciona as peças a utilizar e clica no botão "Preparar"
+11. O sistema fecha a janela "Preparar Veículo"
+12. O utilizador clica no botão "Efetuar troca" na janela "Troca de Veículos"
+13. O sistema valida os dados inseridos, atualiza a lista de transações no ecrã "Transações", mostra uma mensagem de sucesso e fecha a janela "Troca de Veículos"
+```
+
+### Caminhos alternativos
+
+```css
+5.1    O utilizador clica no botão "Voltar"
+5.1.1  O sistema fecha a janela "Troca de Veículos"
+10.1   O utilizador clica no botão "Voltar"
+10.1.1 O sistema fecha a janela "Preparar Veículo"
+13.1   Os dados inseridos são inválidos
+13.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
+```
+
 ## Caso de uso "Ver histórico de transações"
 
 ```css
@@ -198,7 +198,9 @@
 
 ```css
 5.1   O utilizador clica no botão "Voltar"
-5.1.1 O sistema fecha a janela "Registar Cliente" 
+5.1.1 O sistema fecha a janela "Registar Cliente"
+5.2  	O utilizador não preenche os campos obrigatórios e clica no botão "Adicionar"
+5.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 6.1   Os dados inseridos são inválidos
 6.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 6.2   Ocorreu um erro ao guardar os dados.
