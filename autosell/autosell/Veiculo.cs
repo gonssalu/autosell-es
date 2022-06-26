@@ -59,7 +59,7 @@ namespace autosell
 
         public override string ToString()
         {
-            return Marca + " " + Modelo + "  " + Ano;
+            return Marca + " " + Modelo + " " + Ano;
         }
     }
 }
