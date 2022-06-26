@@ -15,5 +15,6 @@ namespace autosell
         public static List<Transacao> TRANSACOES = new();
         public static Sede SEDE = new();
 
+        public static int PROXIMO_ID_LOCAL = 0;
     }
 }

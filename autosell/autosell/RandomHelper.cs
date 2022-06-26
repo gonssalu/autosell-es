@@ -137,14 +137,14 @@ namespace autosell
         }
         #endregion
 
-        private static Veiculo GenVeiculo()
+        private static Veiculo GenVeiculo(Local local)
         {
             String marca = GetRndMarca();
             Array arrtc = Enum.GetValues(typeof(TipoCombustivel));
             TipoCombustivel tc = (TipoCombustivel) arrtc.GetValue(rand.Next(arrtc.Length));
             int nd = rn(1, 10);
             bool used = nd <= 3;
-            Veiculo veiculo = new (marca, GetRndModelo(marca), (used?rn(2004,2020):rn(2016,2022)), tc, GetRndCor(), (used ? rn(2500,16000) : rn(14000,95000)), (used?rn(75000,600000):rn(0,100)), (used ? nd:0), used ? GetRndNomeNP() : "");
+            Veiculo veiculo = new (marca, GetRndModelo(marca), (used?rn(2004,2020):rn(2016,2022)), tc, GetRndCor(), (used ? rn(2500,16000) : rn(14000,95000)), (used?rn(75000,600000):rn(0,100)), (used ? nd:0), used ? GetRndNomeNP() : "", local.IdLocal);
             //VEICULOS.Add(veiculo);
             return veiculo;
         }
@@ -180,7 +180,7 @@ namespace autosell
                 int lotacao = rn(4, 50) * 2;
                 Loja loja = new("Loja " + nomeLoja, GetRndMorada(), lotacao);
                 for (int i = 0; i < rn(lotacao * 1 / 5 , lotacao * 3 / 4); i++)
-                    loja.Garagem.Add(GenVeiculo());
+                    loja.Garagem.Add(GenVeiculo(loja));
 
                 //Gerar Peças
                 foreach (String comb in nomesComb)
@@ -212,13 +212,13 @@ namespace autosell
                     DateTime dt = new(ano, rn(1, 12), rn(1, 28));
                     Evento evento = new(nomeEvento + " " + (ano).ToString(), GetRndMorada(), dt, dt);
                     for (int j = 0; j < rn(1, 6); j++)
-                        evento.Garagem.Add(GenVeiculo());
+                        evento.Garagem.Add(GenVeiculo(evento));
                     Dados.EVENTOS.Add(evento);
                 }
             }
             //Gerar Transacoes
-            Veiculo veiculoPlaceholder = GenVeiculo();
-            Veiculo veiculoPlaceholder2 = GenVeiculo();
+            Veiculo veiculoPlaceholder = GenVeiculo(Dados.LOJAS[0]);
+            Veiculo veiculoPlaceholder2 = GenVeiculo(Dados.LOJAS[0]);
             for (int i = 0; i < 15; i++)
                 Dados.TRANSACOES.Add(new(TipoTransacao.Venda, veiculoPlaceholder, veiculoPlaceholder.Preco, Dados.CLIENTES[i]));
             

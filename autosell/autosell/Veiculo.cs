@@ -26,8 +26,9 @@ namespace autosell
         public Double KmsPercorridos { get; }
         public int NrDonos { get; }
         public String? NomeDonoAnterior { get; }
+        public int IdLocal { get; set; }
 
-        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos, int nrDonos, string nomeDonoAnterior)
+        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos, int nrDonos, string nomeDonoAnterior, int idLocal)
         {
             Marca = marca;
             Modelo = modelo;
@@ -38,9 +39,10 @@ namespace autosell
             KmsPercorridos = kmsPercorridos;
             NrDonos = nrDonos;
             NomeDonoAnterior = nomeDonoAnterior;
+            IdLocal = idLocal;
         }
 
-        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos)
+        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos, int idLocal)
         {
             Marca = marca;
             Modelo = modelo;
@@ -50,6 +52,7 @@ namespace autosell
             Preco = preco;
             KmsPercorridos = kmsPercorridos;
             NrDonos = 0;
+            IdLocal = idLocal;
         }
         
         public override string ToString()

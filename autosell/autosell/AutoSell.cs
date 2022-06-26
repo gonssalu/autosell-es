@@ -16,5 +16,10 @@ namespace autosell
         {
             InitializeComponent();
         }
+
+        private void AutoSell_Load(object sender, EventArgs e)
+        {
+            //RandomHelper.PREENCHER();
+        }
     }
 }
