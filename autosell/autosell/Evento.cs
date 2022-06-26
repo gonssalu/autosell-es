@@ -29,6 +29,9 @@ namespace autosell
 			Terminado = false;
             Garagem.AddRange(veiculos);
         }
-
+        public override string ToString()
+        {
+            return Nome + " (" + DataInicio.ToString("dd/MMM") + " a " + DataFim.ToString("dd/MMM") + ")";
+        }
     }
 }

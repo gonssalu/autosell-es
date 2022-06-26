@@ -20,7 +20,22 @@ namespace autosell
         private void AutoSell_Load(object sender, EventArgs e)
         {
             RandomHelper.PREENCHER();
+            Cursor.Current = Cursors.WaitCursor;
             cmbLojas.DataSource = Dados.LOJAS;
+        }
+        private void AutoSell_Shown(object sender, EventArgs e)
+        {
+            RandomHelper.PREENCHER();
+
+            //Veiculos
+            cmbLojas.DataSource = Dados.LOJAS;
+
+            //Eventos
+            cmbTipoDestino.SelectedIndex = 0;
+            cmbDestino.DataSource = Dados.LOJAS;
+            lstEventos.DataSource = Dados.EVENTOS;
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
@@ -49,6 +64,11 @@ namespace autosell
             lboxVeiculos.DataSource = veiculos;
         }
 
+        private void cmbLojas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
+        }
+
         private void btnApagarVeiculo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente apagar o veículo?", "Confirmação", MessageBoxButtons.YesNo,
@@ -59,12 +79,6 @@ namespace autosell
             Dados.LOJAS[cmbLojas.SelectedIndex].Garagem.Remove(veiculo);
             lboxVeiculos.DataSource = null;
             lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
-        }
-
-        private void cmbLojas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
-            // lboxTransacoes.DataSource = Dados.TRANSACOES;
         }
     }
 }
