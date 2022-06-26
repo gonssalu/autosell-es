@@ -30,6 +30,20 @@ namespace autosell
             lboxVeiculos.DataSource = veiculos;
         }
 
+        private void btnEditarVeiculo_Click(object sender, EventArgs e)
+        {
+            var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex, lboxVeiculos.SelectedIndex);
+            dadosVeiculo.ShowDialog();
+
+            var veiculos = new List<Veiculo>();
+
+            foreach (var veiculo in Dados.LOJAS[cmbLojas.SelectedIndex].Garagem)
+                veiculos.Add(veiculo);
+
+            lboxVeiculos.DataSource = veiculos;
+        }
+
+
         private void AutoSell_Load(object sender, EventArgs e)
         {
             RandomHelper.PREENCHER();

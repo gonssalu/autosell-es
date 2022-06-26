@@ -150,6 +150,7 @@
             this.btnEditarVeiculo.TabIndex = 3;
             this.btnEditarVeiculo.Text = "Editar";
             this.btnEditarVeiculo.UseVisualStyleBackColor = true;
+            this.btnEditarVeiculo.Click += new System.EventHandler(this.btnEditarVeiculo_Click);
             // 
             // btnAdicionarVeiculo
             // 
