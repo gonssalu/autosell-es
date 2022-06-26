@@ -37,7 +37,8 @@ namespace autosell
 
             Cursor.Current = Cursors.Default;
         }
-
+        
+        #region Gerir Veiculos
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
         {
             var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex);
@@ -80,5 +81,10 @@ namespace autosell
             lboxVeiculos.DataSource = null;
             lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
         }
+        #endregion
+        
+        #region Gerir Eventos
+        
+        #endregion
     }
 }
