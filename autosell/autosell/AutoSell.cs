@@ -17,6 +17,25 @@ namespace autosell
             InitializeComponent();
         }
 
+        private void AutoSell_Load(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+        }
+        private void AutoSell_Shown(object sender, EventArgs e)
+        {
+            RandomHelper.PREENCHER();
+
+            //Veiculos
+            cmbLojas.DataSource = Dados.LOJAS;
+
+            //Eventos
+            cmbTipoDestino.SelectedIndex = 0;
+            cmbDestino.DataSource = Dados.LOJAS;
+            lstEventos.DataSource = Dados.EVENTOS;
+
+            Cursor.Current = Cursors.Default;
+        }
+
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
         {
             var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex);
@@ -41,26 +60,6 @@ namespace autosell
                 veiculos.Add(veiculo);
 
             lboxVeiculos.DataSource = veiculos;
-        }
-
-
-        private void AutoSell_Load(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-        }
-        private void AutoSell_Shown(object sender, EventArgs e)
-        {
-            RandomHelper.PREENCHER();
-
-            //Veiculos
-            cmbLojas.DataSource = Dados.LOJAS;
-
-            //Eventos
-            cmbTipoDestino.SelectedIndex = 0;
-            cmbDestino.DataSource = Dados.LOJAS;
-            lstEventos.DataSource = Dados.EVENTOS;
-
-            Cursor.Current = Cursors.Default;
         }
 
         private void cmbLojas_SelectedIndexChanged(object sender, EventArgs e)
