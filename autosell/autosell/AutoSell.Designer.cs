@@ -33,18 +33,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.tabVeiculos = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbLojas = new System.Windows.Forms.ComboBox();
             this.btnEditarVeiculo = new System.Windows.Forms.Button();
             this.btnAdicionarVeiculo = new System.Windows.Forms.Button();
             this.btnApagarVeiculo = new System.Windows.Forms.Button();
             this.lboxVeiculos = new System.Windows.Forms.ListBox();
             this.tabTransacoes = new System.Windows.Forms.TabPage();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnVenda = new System.Windows.Forms.Button();
+            this.lboxTransacoes = new System.Windows.Forms.ListBox();
             this.tabEventos = new System.Windows.Forms.TabPage();
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbLojas = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabVeiculos.SuspendLayout();
+            this.tabTransacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -108,8 +113,6 @@
             // 
             // tabVeiculos
             // 
-            this.tabVeiculos.Controls.Add(this.label3);
-            this.tabVeiculos.Controls.Add(this.cmbLojas);
             this.tabVeiculos.Controls.Add(this.btnEditarVeiculo);
             this.tabVeiculos.Controls.Add(this.btnAdicionarVeiculo);
             this.tabVeiculos.Controls.Add(this.btnApagarVeiculo);
@@ -122,25 +125,6 @@
             this.tabVeiculos.TabIndex = 1;
             this.tabVeiculos.Text = "Veículos";
             this.tabVeiculos.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Loja";
-            // 
-            // cmbLojas
-            // 
-            this.cmbLojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLojas.FormattingEnabled = true;
-            this.cmbLojas.Location = new System.Drawing.Point(41, 5);
-            this.cmbLojas.Name = "cmbLojas";
-            this.cmbLojas.Size = new System.Drawing.Size(189, 23);
-            this.cmbLojas.TabIndex = 4;
-            this.cmbLojas.SelectedIndexChanged += new System.EventHandler(this.cmbLojas_SelectedIndexChanged);
             // 
             // btnEditarVeiculo
             // 
@@ -183,6 +167,10 @@
             // 
             // tabTransacoes
             // 
+            this.tabTransacoes.Controls.Add(this.btnCompra);
+            this.tabTransacoes.Controls.Add(this.button2);
+            this.tabTransacoes.Controls.Add(this.btnVenda);
+            this.tabTransacoes.Controls.Add(this.lboxTransacoes);
             this.tabTransacoes.Location = new System.Drawing.Point(4, 24);
             this.tabTransacoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabTransacoes.Name = "tabTransacoes";
@@ -190,6 +178,42 @@
             this.tabTransacoes.TabIndex = 2;
             this.tabTransacoes.Text = "Transações";
             this.tabTransacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnCompra
+            // 
+            this.btnCompra.Location = new System.Drawing.Point(428, 5);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(75, 23);
+            this.btnCompra.TabIndex = 4;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(590, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Troca";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnVenda
+            // 
+            this.btnVenda.Location = new System.Drawing.Point(509, 5);
+            this.btnVenda.Name = "btnVenda";
+            this.btnVenda.Size = new System.Drawing.Size(75, 23);
+            this.btnVenda.TabIndex = 2;
+            this.btnVenda.Text = "Venda";
+            this.btnVenda.UseVisualStyleBackColor = true;
+            // 
+            // lboxTransacoes
+            // 
+            this.lboxTransacoes.FormattingEnabled = true;
+            this.lboxTransacoes.ItemHeight = 15;
+            this.lboxTransacoes.Location = new System.Drawing.Point(0, 32);
+            this.lboxTransacoes.Name = "lboxTransacoes";
+            this.lboxTransacoes.Size = new System.Drawing.Size(671, 259);
+            this.lboxTransacoes.TabIndex = 1;
             // 
             // tabEventos
             // 
@@ -211,11 +235,32 @@
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Loja";
+            // 
+            // cmbLojas
+            // 
+            this.cmbLojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLojas.FormattingEnabled = true;
+            this.cmbLojas.Location = new System.Drawing.Point(51, 38);
+            this.cmbLojas.Name = "cmbLojas";
+            this.cmbLojas.Size = new System.Drawing.Size(189, 23);
+            this.cmbLojas.TabIndex = 4;
+            this.cmbLojas.SelectedIndexChanged += new System.EventHandler(this.cmbLojas_SelectedIndexChanged);
+            // 
             // AutoSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbLojas);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,8 +272,9 @@
             this.tabInicio.ResumeLayout(false);
             this.tabInicio.PerformLayout();
             this.tabVeiculos.ResumeLayout(false);
-            this.tabVeiculos.PerformLayout();
+            this.tabTransacoes.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,5 +295,9 @@
         private Button btnEditarVeiculo;
         private Label label3;
         private ComboBox cmbLojas;
+        private ListBox lboxTransacoes;
+        private Button button2;
+        private Button btnVenda;
+        private Button btnCompra;
     }
 }
