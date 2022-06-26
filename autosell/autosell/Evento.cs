@@ -11,12 +11,14 @@ namespace autosell
         public String Nome { get; }
         public DateTime DataInicio { get; }
         public DateTime DataFim { get; }
+        public Boolean Terminado { get; set; }
 
         public Evento(String nome, String morada, DateTime dataInicio, DateTime dataFim) : base(morada)
         {
             Nome = nome;
             DataInicio = dataInicio;
             DataFim = dataFim;
+			Terminado = false;
         }
 
         public Evento(String nome, String morada, DateTime dataInicio, DateTime dataFim, List<Veiculo> veiculos) : base(morada)
@@ -24,6 +26,7 @@ namespace autosell
             Nome = nome;
             DataInicio = dataInicio;
             DataFim = dataFim;
+			Terminado = false;
             Garagem.AddRange(veiculos);
         }
 
