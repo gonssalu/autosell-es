@@ -161,15 +161,14 @@
 2.  O sistema apresenta o ecrã "Transações" na janela principal
 3.  O utilizador clica no botão "Troca" no ecrã "Transações"
 4.  O sistema abre a janela "Troca de Veículos"
-5.  O utilizador seleciona o veículo a enviar
-6.  O utilizador clica no botão "Registar Veículo" de modo a registar o veículo a receber
-7.  O sistema invoca o caso de uso "Adicionar veículo" a partir do ponto 4.
-8.  O utilizador seleciona o cliente alvo da troca, preenche o valor da troca e clica no botão "Preparar Veículo"
-9.  O sistema abre a janela "Preparar Veículo"
-10. O utilizador seleciona as peças a utilizar e clica no botão "Preparar"
-11. O sistema fecha a janela "Preparar Veículo"
-12. O utilizador clica no botão "Efetuar troca" na janela "Troca de Veículos"
-13. O sistema valida os dados inseridos, atualiza a lista de transações no ecrã "Transações", mostra uma mensagem de sucesso e fecha a janela "Troca de Veículos"
+5.  O utilizador seleciona o veículo a enviar clica no botão "Registar Veículo" de modo a registar o veículo a receber
+6.  O sistema invoca o caso de uso "Adicionar veículo" a partir do ponto 4.
+7.  O utilizador seleciona o cliente alvo da troca, preenche o valor da troca e clica no botão "Preparar Veículo"
+8.  O sistema abre a janela "Preparar Veículo"
+9.  O utilizador seleciona as peças a utilizar e clica no botão "Preparar"
+10. O sistema fecha a janela "Preparar Veículo"
+11. O utilizador clica no botão "Efetuar troca" na janela "Troca de Veículos"
+12. O sistema valida os dados inseridos, atualiza a lista de transações no ecrã "Transações", mostra uma mensagem de sucesso e fecha a janela "Troca de Veículos"
 ```
 
 ### Caminhos alternativos
@@ -177,10 +176,17 @@
 ```css
 5.1    O utilizador clica no botão "Voltar"
 5.1.1  O sistema fecha a janela "Troca de Veículos"
-10.1   O utilizador clica no botão "Voltar"
-10.1.1 O sistema fecha a janela "Preparar Veículo"
-13.1   Os dados inseridos são inválidos
-13.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
+7.1    O utilizador clica no botão "Novo cliente"
+7.1.1  O sistema invoca o caso de uso "Registar um cliente novo" a partir do ponto 4
+7.1.2  O utilizador seleciona o cliente alvo da troca, preenche o valor da troca e clica no botão "Preparar Veículo"
+9.1    O utilizador clica no botão "Voltar"
+9.1.1  O sistema fecha a janela "Preparar Veículo"
+11.1   O utilizador não preenche os dados obrigatórios e clica no botão "Efetuar troca"
+11.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
+12.1   Os dados inseridos são inválidos
+12.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
+12.2   Ocorreu um erro ao guardar os dados.
+12.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 8 do caso de uso
 ```
 
 ## Caso de uso "Ver histórico de transações"
