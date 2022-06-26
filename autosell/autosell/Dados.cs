@@ -16,5 +16,12 @@ namespace autosell
         public static Sede SEDE = new();
 
         public static int PROXIMO_ID_LOCAL = 0;
+
+        public static void MudarLocalVeiculo(Veiculo veiculo, Local localAntigo, Local novoLocal)
+        {
+            localAntigo.RemoverVeiculo(veiculo);
+            novoLocal.AdicionarVeiculo(veiculo);
+            veiculo.IdLocal = novoLocal.IdLocal;
+        }
     }
 }
