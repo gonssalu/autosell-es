@@ -14,12 +14,12 @@ namespace autosell
         Elétrico,
         Híbrido
     }
-    
+
     internal class Veiculo
     {
         public String Marca { get; }
         public String Modelo { get; }
-        public int Ano { get;  }
+        public int Ano { get; }
         public TipoCombustivel Combustivel { get; }
         public String Cor { get; }
         public Double Preco { get; }
@@ -28,7 +28,8 @@ namespace autosell
         public String? NomeDonoAnterior { get; }
         public int IdLocal { get; set; }
 
-        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos, int nrDonos, string nomeDonoAnterior, int idLocal)
+        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco,
+                       double kmsPercorridos, int nrDonos, string nomeDonoAnterior, int idLocal)
         {
             Marca = marca;
             Modelo = modelo;
@@ -42,7 +43,8 @@ namespace autosell
             IdLocal = idLocal;
         }
 
-        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco, double kmsPercorridos, int idLocal)
+        public Veiculo(string marca, string modelo, int ano, TipoCombustivel combustivel, string cor, double preco,
+                       double kmsPercorridos, int idLocal)
         {
             Marca = marca;
             Modelo = modelo;
@@ -54,7 +56,7 @@ namespace autosell
             NrDonos = 0;
             IdLocal = idLocal;
         }
-        
+
         public override string ToString()
         {
             return Marca + " " + Modelo + "  " + Ano;

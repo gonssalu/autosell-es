@@ -15,22 +15,36 @@ namespace autosell
         public AutoSell()
         {
             InitializeComponent();
-            // lboxVeiculos.DataSource = Dados.VEICULOS;
-            lboxVeiculos.Refresh();
         }
 
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
         {
-            var dadosVeiculo = new DadosVeiculoForm();
+            var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex);
             dadosVeiculo.ShowDialog();
 
-            lboxVeiculos.DataSource = null;
-            // lboxVeiculos.DataSource = Dados.VEICULOS;
+            var veiculos = new List<Veiculo>();
+
+            foreach (var veiculo in Dados.LOJAS[cmbLojas.SelectedIndex].Garagem)
+                veiculos.Add(veiculo);
+
+            lboxVeiculos.DataSource = veiculos;
         }
 
         private void AutoSell_Load(object sender, EventArgs e)
         {
-            //RandomHelper.PREENCHER();
+            RandomHelper.PREENCHER();
+
+            cmbLojas.DataSource = Dados.LOJAS;
+        }
+
+        private void cmbLojas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var veiculos = new List<Veiculo>();
+
+            foreach (var veiculo in Dados.LOJAS[cmbLojas.SelectedIndex].Garagem)
+                veiculos.Add(veiculo);
+
+            lboxVeiculos.DataSource = veiculos;
         }
     }
 }

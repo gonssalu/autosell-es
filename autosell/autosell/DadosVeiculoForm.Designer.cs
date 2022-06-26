@@ -172,7 +172,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(406, 154);
+            this.btnGuardar.Location = new System.Drawing.Point(406, 151);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 16;
@@ -182,7 +182,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(328, 154);
+            this.btnVoltar.Location = new System.Drawing.Point(328, 151);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 17;
@@ -218,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 189);
+            this.ClientSize = new System.Drawing.Size(496, 183);
             this.Controls.Add(this.cmbCombustivel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtAno);

@@ -12,12 +12,14 @@ namespace autosell
 {
     public partial class DadosVeiculoForm : Form
     {
-        public DadosVeiculoForm()
+        private int _lojaId;
+
+        public DadosVeiculoForm(int lojaId)
         {
             InitializeComponent();
 
-            foreach (object item in Enum.GetValues(typeof(TipoCombustivel)))
-                cmbCombustivel.Items.Add(item);
+            _lojaId = lojaId;
+            cmbCombustivel.DataSource = Enum.GetValues(typeof(TipoCombustivel));
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -54,10 +56,10 @@ namespace autosell
                 return;
             }
 
-            var veiculo = new Veiculo(marca, modelo, ano, combustivel, cor, preco, kms, numDonos, donoAnterior);
+            var veiculo = new Veiculo(marca, modelo, ano, combustivel, cor, preco, kms, numDonos, donoAnterior, _lojaId);
 
             try {
-                // Dados.VEICULOS.Add(veiculo);
+                Dados.LOJAS[_lojaId].Garagem.Add(veiculo);
             }
             catch (Exception ex) {
                 MessageBox.Show("Ocorreu um erro no registo do veículo: " + ex.Message, "Erro", MessageBoxButtons.OK,
