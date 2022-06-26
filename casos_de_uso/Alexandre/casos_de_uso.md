@@ -105,7 +105,7 @@
 5. O utilizador seleciona o veículo a vender e o cliente alvo da venda, preenche o valor da venda e clica no botão "Preparar veículo"
 6. O sistema abre a janela "Preparar Veículo"
 7. O utilizador seleciona as peças a utilizar e clica no botão "Preparar"
-8. O sistema fecha a janela "Preparar Veículo"
+8. O sistema usa as peças e fecha a janela "Preparar Veículo"
 9. O utilizador clica no botão "Vender" na janela "Vender Veículo"
 10. O sistema valida os dados inseridos, atualiza a lista de transações no ecrã "Transações", mostra uma mensagem de sucesso e fecha a janela "Vender Veículo"
 ```
@@ -113,13 +113,19 @@
 ### Caminhos alternativos
 
 ```css
-5.1   O utilizador clica no botão "Voltar"
-5.1.1 O sistema fecha a janela "Vender Veículo"
-5.2   O utilizador clica no botão "Novo cliente"
-5.2.1 O sistema invoca o caso de uso "Registar um cliente novo" a partir do ponto 4
-5.2.2 O utilizador seleciona o cliente acabado de registar, o veículo, preenche o valor da venda e clica no botão "Preparar veículo"
-7.1   O utilizador clica no botão "Voltar"
-7.1.1 O sistema fecha a janela "Preparar Veículo"
+5.1    O utilizador clica no botão "Voltar"
+5.1.1  O sistema fecha a janela "Vender Veículo"
+5.2    O utilizador clica no botão "Novo cliente"
+5.2.1  O sistema invoca o caso de uso "Registar um cliente novo" a partir do ponto 4
+5.2.2  O utilizador seleciona o cliente acabado de registar, o veículo, preenche o valor da venda e clica no botão "Preparar veículo"
+7.1    O utilizador clica no botão "Voltar"
+7.1.1  O sistema fecha a janela "Preparar Veículo"
+9.1    O utilizador não preenche os dados obrigatórios e clica no botão "Vender"
+9.1.1  O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
+10.1   Os dados inseridos são inválidos
+10.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
+10.2   Ocorreu um erro ao guardar os dados.
+10.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 ```
 
 ## Caso de uso "Comprar veículo"
@@ -188,18 +194,18 @@
 ```css
 1. O utilizador clica no botão "Clientes" na janela principal
 2. O sistema apresenta o ecrã "Gerir Clientes" na janela principal
-3. O utilizador clica no botão "Registar cliente" no ecrã "Gerir Clientes"
-4. O sistema abre a janela "Registar Cliente"
-5. O utilizador preenche os campos com os dados do cliente e clica no botão "Registar"
-6. O sistema valida os dados inseridos, cria um cliente com esses dados, atualiza a lista de clientes no ecrã "Gerir Clientes", mostra uma mensagem de sucesso e fecha a janela "Registar Cliente"
+3. O utilizador clica no botão "Adicionar cliente" no ecrã "Gerir Clientes"
+4. O sistema abre a janela "Adicionar Cliente"
+5. O utilizador preenche os campos com os dados do cliente e clica no botão "Adicionar"
+6. O sistema valida os dados inseridos, cria um cliente com esses dados, atualiza a lista de clientes no ecrã "Gerir Clientes", mostra uma mensagem de sucesso e fecha a janela "Adicionar Cliente"
 ```
 
 ### Caminhos alternativos
 
 ```css
 5.1   O utilizador clica no botão "Voltar"
-5.1.1 O sistema fecha a janela "Registar Cliente"
-5.2  	O utilizador não preenche os campos obrigatórios e clica no botão "Adicionar"
+5.1.1 O sistema fecha a janela "Adicionar Cliente"
+5.2   O utilizador não preenche os campos obrigatórios e clica no botão "Adicionar"
 5.2.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
 6.1   Os dados inseridos são inválidos
 6.1.1 O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso
