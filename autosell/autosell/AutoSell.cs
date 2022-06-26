@@ -27,5 +27,10 @@ namespace autosell
             lboxVeiculos.DataSource = null;
             // lboxVeiculos.DataSource = Dados.VEICULOS;
         }
+
+        private void AutoSell_Load(object sender, EventArgs e)
+        {
+            //RandomHelper.PREENCHER();
+        }
     }
 }

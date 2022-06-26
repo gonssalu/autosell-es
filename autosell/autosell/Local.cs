@@ -8,11 +8,14 @@ namespace autosell
 {
     internal class Local
     {
+        public int IdLocal { get; }
         public String Morada { get; }
         public List<Veiculo> Garagem { get; }
 
         public Local(string morada)
         {
+            IdLocal = Dados.PROXIMO_ID_LOCAL;
+            Dados.PROXIMO_ID_LOCAL++;
             Morada = morada;
             Garagem = new List<Veiculo>();
         }

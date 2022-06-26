@@ -26,10 +26,10 @@ Caminhos alternativos:
 
 2.2: O utilizador clica no botão "Associar Veículos" no ecrã "Agendar Evento".
 2.2.1: O sistema invoca o caso auxiliar "Selecionar Veículos".
-2.2.2: O caso de uso continua no ponto 5.
+2.2.2: O caso de uso continua no ponto 2.
 
 2.3: O utilizador não preenche os campos obrigatórios e clica no botão "Agendar".
-2.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
+2.3.1: O sistema mostra uma mensagem de erro e volta ao ponto 2 do caso de uso.
 
 2.4: O utilizador seleciona a opção "Fora de uma loja"
 2.4.1: O sistema desativa a dropdown "Loja" e ativa o campo "Outro local"
@@ -38,7 +38,7 @@ Caminhos alternativos:
 2.5.1: O sistema ativa a dropdown "Loja" e desativa o campo "Outro local"
 
 3.1: Os dados inseridos são inválidos.
-3.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 5 do caso de uso.
+3.1.1: O sistema mostra uma mensagem de erro e volta ao ponto 2 do caso de uso.
 
 
 
@@ -105,7 +105,7 @@ Editar Evento:
 
 1: O utilizador seleciona um evento na lista de eventos e clica no botão "Editar" no ecrã "Gerir Eventos".
 
-2: O caso auxiliar "Janela Agendar Evento" é invocado.
+2: O caso auxiliar "Janela Agendar Evento" é invocado com o botão "Associar Veículos" desativado.
 
 3: O sistema recebe os dados da janela, guarda-os, atualiza a lista de eventos no ecrã "Gerir Eventos", mostra uma mensagem de sucesso e fecha a janela "Editar Evento".
 

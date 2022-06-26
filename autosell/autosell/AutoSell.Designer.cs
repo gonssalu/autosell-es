@@ -40,6 +40,7 @@
             this.tabEventos = new System.Windows.Forms.TabPage();
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
             this.btnEditarVeiculo = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabVeiculos.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // tabInicio
             // 
+            this.tabInicio.Controls.Add(this.listBox1);
             this.tabInicio.Controls.Add(this.label2);
             this.tabInicio.Controls.Add(this.label1);
             this.tabInicio.Location = new System.Drawing.Point(4, 24);
@@ -78,7 +80,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(161, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(327, 141);
+            this.label2.Size = new System.Drawing.Size(398, 177);
             this.label2.TabIndex = 1;
             this.label2.Text = "Alexandre Jerónimo\r\nDiogo Almeida\r\nGonçalo Paulino";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,6 +187,14 @@
             this.btnEditarVeiculo.TabIndex = 3;
             this.btnEditarVeiculo.Text = "Editar";
             this.btnEditarVeiculo.UseVisualStyleBackColor = true;
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(211, 65);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(354, 204);
+            this.listBox1.TabIndex = 2;
             // 
             // AutoSell
             // 
@@ -197,6 +207,7 @@
             this.MaximizeBox = false;
             this.Name = "AutoSell";
             this.Text = "AutoSell";
+            this.Load += new System.EventHandler(this.AutoSell_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabInicio.ResumeLayout(false);
             this.tabInicio.PerformLayout();
@@ -220,5 +231,6 @@
         private Button btnApagarVeiculo;
         private ListBox lboxVeiculos;
         private Button btnEditarVeiculo;
+        private ListBox listBox1;
     }
 }
