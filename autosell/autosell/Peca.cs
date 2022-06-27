@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Peca
+    public class Peca
     {
         public String Nome { get; }
         public int Unidades { get; set; }
         public int StockMinimo { get; }
         public Loja Loja { get; }
+
         public Peca(String nome, int unidades, int stockMinimo, Loja loja)
         {
             Nome = nome;
@@ -19,6 +20,7 @@ namespace autosell
             StockMinimo = stockMinimo;
             Loja = loja;
         }
+
         public override string ToString()
         {
             return Nome;

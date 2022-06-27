@@ -362,6 +362,15 @@ namespace autosell
 
         private void btnVenda_Click(object sender, EventArgs e)
         {
+            var venderVeiculo = new VenderVeiculoForm(cmbLojasTransacoes.SelectedIndex);
+            venderVeiculo.ShowDialog();
+
+            var transacoes = new List<Transacao>();
+
+            foreach (var transacao in Dados.TRANSACOES)
+                transacoes.Add(transacao);
+
+            lboxTransacoes.DataSource = transacoes;
         }
 
         private void btnTroca_Click(object sender, EventArgs e)
@@ -404,31 +413,29 @@ namespace autosell
 
             foreach (Transacao tr in Dados.TRANSACOES) {
                 if (tr.Data >= inicio && tr.Data <= fim) {
-                    if (tr.Tipo == TipoTransacao.Venda)
-                    {
+                    if (tr.Tipo == TipoTransacao.Venda) {
                         UpdateDictionaryKey(totalMarcas, tr.Veiculo.Marca, tr.Valor);
                         UpdateDictionaryKey(totalModelos, tr.Veiculo.Modelo, tr.Valor);
                         UpdateDictionaryKey(totalClientes, tr.Cliente.Nome, tr.Valor);
                         total += tr.Valor;
                     }
-                    else if (tr.Tipo == TipoTransacao.Compra)
-                    {
+                    else if (tr.Tipo == TipoTransacao.Compra) {
                         total -= tr.Valor;
                     }
                 }
             }
-            if (totalMarcas.Count != 0)
-            {
+
+            if (totalMarcas.Count != 0) {
                 totalMarca = totalMarcas.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
                 marca = totalMarcas.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             }
-            if(totalModelos.Count != 0)
-            {
+
+            if (totalModelos.Count != 0) {
                 totalModelo = totalModelos.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
                 modelo = totalModelos.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             }
-            if(totalClientes.Count != 0)
-            {
+
+            if (totalClientes.Count != 0) {
                 totalCliente = totalClientes.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
                 cliente = totalClientes.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             }
@@ -445,10 +452,10 @@ namespace autosell
         private void PreencherEstatisticas()
         {
             GetEstatisticasFor(dtpInicio1.Value, dtpFim1.Value, out string marca1, out string modelo1, out string cliente1,
-                                out double totalMarca1, out double totalModelo1, out double totalCliente1, out double total1);
+                               out double totalMarca1, out double totalModelo1, out double totalCliente1, out double total1);
 
             GetEstatisticasFor(dtpInicio2.Value, dtpFim2.Value, out string marca2, out string modelo2, out string cliente2,
-                                out double totalMarca2, out double totalModelo2, out double totalCliente2, out double total2);
+                               out double totalMarca2, out double totalModelo2, out double totalCliente2, out double total2);
 
             txtECliente1.Text = cliente1;
             txtEMarca1.Text = marca1;

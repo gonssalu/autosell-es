@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    enum TipoCombustivel
+    public enum TipoCombustivel
     {
         Gasolina,
         Gasóleo,
@@ -15,7 +15,7 @@ namespace autosell
         Híbrido
     }
 
-    internal class Veiculo
+    public class Veiculo
     {
         public String Marca { get; }
         public String Modelo { get; }
