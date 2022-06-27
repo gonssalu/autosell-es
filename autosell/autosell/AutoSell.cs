@@ -349,7 +349,7 @@ namespace autosell
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
-            var comprarVeiculo = new ComprarVeiculoForm(tabControl1.SelectedIndex);
+            var comprarVeiculo = new ComprarVeiculoForm(cmbLojasTransacoes.SelectedIndex);
             comprarVeiculo.ShowDialog();
 
             var transacoes = new List<Transacao>();
