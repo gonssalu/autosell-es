@@ -32,6 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.btnConsultarCliente = new System.Windows.Forms.Button();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnAdicionarCliente = new System.Windows.Forms.Button();
+            this.btnApagarCliente = new System.Windows.Forms.Button();
+            this.lboxClientes = new System.Windows.Forms.ListBox();
             this.tabVeiculos = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbLojasVeiculos = new System.Windows.Forms.ComboBox();
@@ -41,6 +46,7 @@
             this.btnApagarVeiculo = new System.Windows.Forms.Button();
             this.lboxVeiculos = new System.Windows.Forms.ListBox();
             this.tabTransacoes = new System.Windows.Forms.TabPage();
+            this.btnTroca = new System.Windows.Forms.Button();
             this.btnCompra = new System.Windows.Forms.Button();
             this.btnVenda = new System.Windows.Forms.Button();
             this.lboxTransacoes = new System.Windows.Forms.ListBox();
@@ -56,12 +62,6 @@
             this.btnApagarEvento = new System.Windows.Forms.Button();
             this.lstEventos = new System.Windows.Forms.ListBox();
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
-            this.lboxClientes = new System.Windows.Forms.ListBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnApagar = new System.Windows.Forms.Button();
-            this.btnTroca = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -120,10 +120,10 @@
             // 
             // tabClientes
             // 
-            this.tabClientes.Controls.Add(this.btnConsultar);
-            this.tabClientes.Controls.Add(this.btnEditar);
-            this.tabClientes.Controls.Add(this.btnAdicionar);
-            this.tabClientes.Controls.Add(this.btnApagar);
+            this.tabClientes.Controls.Add(this.btnConsultarCliente);
+            this.tabClientes.Controls.Add(this.btnEditarCliente);
+            this.tabClientes.Controls.Add(this.btnAdicionarCliente);
+            this.tabClientes.Controls.Add(this.btnApagarCliente);
             this.tabClientes.Controls.Add(this.lboxClientes);
             this.tabClientes.Location = new System.Drawing.Point(4, 24);
             this.tabClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -133,6 +133,56 @@
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
             this.tabClientes.UseVisualStyleBackColor = true;
+            // 
+            // btnConsultarCliente
+            // 
+            this.btnConsultarCliente.Location = new System.Drawing.Point(347, 5);
+            this.btnConsultarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConsultarCliente.Name = "btnConsultarCliente";
+            this.btnConsultarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarCliente.TabIndex = 8;
+            this.btnConsultarCliente.Text = "Consultar";
+            this.btnConsultarCliente.UseVisualStyleBackColor = true;
+            this.btnConsultarCliente.Click += new System.EventHandler(this.btnConsultarCliente_Click);
+            // 
+            // btnEditarCliente
+            // 
+            this.btnEditarCliente.Location = new System.Drawing.Point(509, 5);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarCliente.TabIndex = 7;
+            this.btnEditarCliente.Text = "Editar";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
+            // 
+            // btnAdicionarCliente
+            // 
+            this.btnAdicionarCliente.Location = new System.Drawing.Point(428, 5);
+            this.btnAdicionarCliente.Name = "btnAdicionarCliente";
+            this.btnAdicionarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarCliente.TabIndex = 6;
+            this.btnAdicionarCliente.Text = "Adicionar";
+            this.btnAdicionarCliente.UseVisualStyleBackColor = true;
+            this.btnAdicionarCliente.Click += new System.EventHandler(this.btnAdicionarCliente_Click);
+            // 
+            // btnApagarCliente
+            // 
+            this.btnApagarCliente.Location = new System.Drawing.Point(590, 5);
+            this.btnApagarCliente.Name = "btnApagarCliente";
+            this.btnApagarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnApagarCliente.TabIndex = 5;
+            this.btnApagarCliente.Text = "Apagar";
+            this.btnApagarCliente.UseVisualStyleBackColor = true;
+            this.btnApagarCliente.Click += new System.EventHandler(this.btnApagarCliente_Click);
+            // 
+            // lboxClientes
+            // 
+            this.lboxClientes.FormattingEnabled = true;
+            this.lboxClientes.ItemHeight = 15;
+            this.lboxClientes.Location = new System.Drawing.Point(0, 32);
+            this.lboxClientes.Name = "lboxClientes";
+            this.lboxClientes.Size = new System.Drawing.Size(671, 259);
+            this.lboxClientes.TabIndex = 1;
             // 
             // tabVeiculos
             // 
@@ -235,6 +285,15 @@
             this.tabTransacoes.TabIndex = 2;
             this.tabTransacoes.Text = "Transações";
             this.tabTransacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnTroca
+            // 
+            this.btnTroca.Location = new System.Drawing.Point(590, 5);
+            this.btnTroca.Name = "btnTroca";
+            this.btnTroca.Size = new System.Drawing.Size(75, 23);
+            this.btnTroca.TabIndex = 13;
+            this.btnTroca.Text = "Troca";
+            this.btnTroca.UseVisualStyleBackColor = true;
             // 
             // btnCompra
             // 
@@ -394,61 +453,6 @@
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
             // 
-            // lboxClientes
-            // 
-            this.lboxClientes.FormattingEnabled = true;
-            this.lboxClientes.ItemHeight = 15;
-            this.lboxClientes.Location = new System.Drawing.Point(0, 32);
-            this.lboxClientes.Name = "lboxClientes";
-            this.lboxClientes.Size = new System.Drawing.Size(671, 259);
-            this.lboxClientes.TabIndex = 1;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(347, 5);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(509, 5);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 7;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Location = new System.Drawing.Point(428, 5);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar.TabIndex = 6;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.Location = new System.Drawing.Point(590, 5);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(75, 23);
-            this.btnApagar.TabIndex = 5;
-            this.btnApagar.Text = "Apagar";
-            this.btnApagar.UseVisualStyleBackColor = true;
-            // 
-            // btnTroca
-            // 
-            this.btnTroca.Location = new System.Drawing.Point(590, 5);
-            this.btnTroca.Name = "btnTroca";
-            this.btnTroca.Size = new System.Drawing.Size(75, 23);
-            this.btnTroca.TabIndex = 13;
-            this.btnTroca.Text = "Troca";
-            this.btnTroca.UseVisualStyleBackColor = true;
-            // 
             // AutoSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -507,10 +511,10 @@
         private Button btnCompra;
         private Button btnVenda;
         private ListBox lboxClientes;
-        private Button btnConsultar;
-        private Button btnEditar;
-        private Button btnAdicionar;
-        private Button btnApagar;
+        private Button btnConsultarCliente;
+        private Button btnEditarCliente;
+        private Button btnAdicionarCliente;
+        private Button btnApagarCliente;
         private Button btnTroca;
     }
 }

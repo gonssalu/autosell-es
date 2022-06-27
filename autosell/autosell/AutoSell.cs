@@ -26,10 +26,10 @@ namespace autosell
         {
             RandomHelper.PREENCHER();
 
-            //Veiculos
+            // Veículos
             cmbLojasVeiculos.DataSource = Dados.LOJAS;
 
-            //Eventos
+            // Eventos
             cmbTipoDestino.SelectedIndex = 0;
             AtualizarListaEventos();
 
@@ -133,6 +133,27 @@ namespace autosell
         }
 
         #endregion
+
+        #region Gerir Clientes
+
+        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAdicionarCliente_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnApagarCliente_Click(object sender, EventArgs e)
+        {
+        }
+
+        #endregion
+
 
         #region Outras coisas
 
