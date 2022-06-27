@@ -395,26 +395,76 @@ namespace autosell
             totalCliente = 0;
             totalMarca = 0;
             totalModelo = 0;
-            cliente = "";
-            marca = "";
-            modelo = "";
+            cliente = "Sem vendas registadas";
+            marca = "Sem vendas registadas";
+            modelo = "Sem vendas registadas";
             Dictionary<String, double> totalMarcas = new();
             Dictionary<String, double> totalModelos = new();
             Dictionary<String, double> totalClientes = new();
 
             foreach (Transacao tr in Dados.TRANSACOES) {
                 if (tr.Data >= inicio && tr.Data <= fim) {
-                    if (tr.Tipo != TipoTransacao.Troca) {
+                    if (tr.Tipo == TipoTransacao.Venda)
+                    {
+                        UpdateDictionaryKey(totalMarcas, tr.Veiculo.Marca, tr.Valor);
+                        UpdateDictionaryKey(totalModelos, tr.Veiculo.Modelo, tr.Valor);
+                        UpdateDictionaryKey(totalClientes, tr.Cliente.Nome, tr.Valor);
                         total += tr.Valor;
+                    }
+                    else if (tr.Tipo == TipoTransacao.Compra)
+                    {
+                        total -= tr.Valor;
                     }
                 }
             }
+            if (totalMarcas.Count != 0)
+            {
+                totalMarca = totalMarcas.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
+                marca = totalMarcas.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
+            }
+            if(totalModelos.Count != 0)
+            {
+                totalModelo = totalModelos.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
+                modelo = totalModelos.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
+            }
+            if(totalClientes.Count != 0)
+            {
+                totalCliente = totalClientes.Aggregate((l, r) => l.Value > r.Value ? l : r).Value;
+                cliente = totalClientes.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
+            }
+        }
+
+        private void UpdateDictionaryKey(Dictionary<String, double> dic, String key, double value)
+        {
+            if (dic.ContainsKey(key))
+                dic[key] += value;
+            else
+                dic.Add(key, value);
         }
 
         private void PreencherEstatisticas()
         {
-            foreach (Transacao tr in Dados.TRANSACOES) {
-            }
+            GetEstatisticasFor(dtpInicio1.Value, dtpFim1.Value, out string marca1, out string modelo1, out string cliente1,
+                                out double totalMarca1, out double totalModelo1, out double totalCliente1, out double total1);
+
+            GetEstatisticasFor(dtpInicio2.Value, dtpFim2.Value, out string marca2, out string modelo2, out string cliente2,
+                                out double totalMarca2, out double totalModelo2, out double totalCliente2, out double total2);
+
+            txtECliente1.Text = cliente1;
+            txtEMarca1.Text = marca1;
+            txtEModelo1.Text = modelo1;
+            txtFatTotal1.Text = total1.ToString("C");
+            txtETCliente1.Text = totalCliente1.ToString("C");
+            txtETMarca1.Text = totalMarca1.ToString("C");
+            txtETModelo1.Text = totalModelo1.ToString("C");
+
+            txtECliente2.Text = cliente2;
+            txtEMarca2.Text = marca2;
+            txtEModelo2.Text = modelo2;
+            txtFatTotal2.Text = total2.ToString("C");
+            txtETCliente2.Text = totalCliente2.ToString("C");
+            txtETMarca2.Text = totalMarca2.ToString("C");
+            txtETModelo2.Text = totalModelo2.ToString("C");
         }
 
         #endregion

@@ -230,7 +230,7 @@ namespace autosell
             for (int i = 15; i < 30; i++)
             {
                 dat = new(2022, rn(1, 12), rn(1, 28));
-                Dados.TRANSACOES.Add(new(TipoTransacao.Compra, veiculoPlaceholder, veiculoPlaceholder.Preco / 2, Dados.CLIENTES[i], dat));
+                Dados.TRANSACOES.Add(new(TipoTransacao.Compra, veiculoPlaceholder2, veiculoPlaceholder2.Preco / 2, Dados.CLIENTES[i], dat));
             }
             
             dat = new(2022, rn(1, 12), rn(1, 28));
