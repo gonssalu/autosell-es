@@ -158,6 +158,7 @@
             this.btnAssociarVeiculos.TabIndex = 28;
             this.btnAssociarVeiculos.Text = "Associar Veículos";
             this.btnAssociarVeiculos.UseVisualStyleBackColor = true;
+            this.btnAssociarVeiculos.Click += new System.EventHandler(this.btnAssociarVeiculos_Click);
             // 
             // lblVeiAss
             // 
@@ -215,7 +216,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "JanelaEvento";
-            this.Text = "JanelaEvento";
+            this.Text = "Agendar Evento";
             this.Load += new System.EventHandler(this.JanelaEvento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

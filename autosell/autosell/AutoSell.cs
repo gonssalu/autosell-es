@@ -137,7 +137,11 @@ namespace autosell
             JanelaEvento je = new JanelaEvento();
             je.EditarEsteEvento(lstEventos.SelectedIndex);
             je.ShowDialog();
-            AtualizarListaEventos();
+            if (je.done)
+            {
+                AtualizarListaEventos();
+                MostrarSucesso("Evento alterado com sucesso!");
+            }
         }
 
         private void ConsultarEventoClick(object sender, EventArgs e)
@@ -153,8 +157,11 @@ namespace autosell
             if (!SelecionouEvento()) return;
             JanelaEvento je = new JanelaEvento();
             je.ShowDialog();
-            AtualizarListaEventos();
-            MostrarSucesso("Evento agendado com sucesso!");
+            if (je.done)
+            {
+                AtualizarListaEventos();
+                MostrarSucesso("Evento agendado com sucesso!");
+            }
         }
 
         private void btnApagarEvento_Click(object sender, EventArgs e)

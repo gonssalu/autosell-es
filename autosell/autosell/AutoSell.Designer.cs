@@ -64,6 +64,7 @@
             this.btnApagarEvento = new System.Windows.Forms.Button();
             this.lstEventos = new System.Windows.Forms.ListBox();
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpFim2 = new System.Windows.Forms.DateTimePicker();
@@ -101,7 +102,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAtualizarEstatisticas = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -170,7 +170,7 @@
             this.tabClientes.Controls.Add(this.lboxClientes);
             this.tabClientes.Location = new System.Drawing.Point(4, 29);
             this.tabClientes.Name = "tabClientes";
-            this.tabClientes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabClientes.Padding = new System.Windows.Forms.Padding(3);
             this.tabClientes.Size = new System.Drawing.Size(768, 394);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
@@ -240,7 +240,7 @@
             this.tabVeiculos.Controls.Add(this.lboxVeiculos);
             this.tabVeiculos.Location = new System.Drawing.Point(4, 29);
             this.tabVeiculos.Name = "tabVeiculos";
-            this.tabVeiculos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabVeiculos.Padding = new System.Windows.Forms.Padding(3);
             this.tabVeiculos.Size = new System.Drawing.Size(768, 394);
             this.tabVeiculos.TabIndex = 1;
             this.tabVeiculos.Text = "Veículos";
@@ -537,6 +537,16 @@
             this.tabEstatisticas.TabIndex = 4;
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 324);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(496, 20);
+            this.label20.TabIndex = 16;
+            this.label20.Tag = "";
+            this.label20.Text = "*A faturação total inclui as compras e vendas, pelo que pode ser negativa";
             // 
             // groupBox3
             // 
@@ -883,16 +893,6 @@
             this.btnAtualizarEstatisticas.Text = "Atualizar Estatísticas";
             this.btnAtualizarEstatisticas.UseVisualStyleBackColor = true;
             this.btnAtualizarEstatisticas.Click += new System.EventHandler(this.btnAtualizarEstatisticas_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 324);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(496, 20);
-            this.label20.TabIndex = 16;
-            this.label20.Tag = "";
-            this.label20.Text = "*A faturação total inclui as compras e vendas, pelo que pode ser negativa";
             // 
             // AutoSell
             // 

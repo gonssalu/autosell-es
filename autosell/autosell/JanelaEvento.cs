@@ -13,7 +13,9 @@ namespace autosell
     public partial class JanelaEvento : Form
     {
         public int idxEvento = -1;
-        
+        public bool done = false;
+        public List<Veiculo> veiculos = new();
+
         public JanelaEvento()
         {
             InitializeComponent();
@@ -29,7 +31,12 @@ namespace autosell
             if (idxEvento != -1)
                 lblVeiAss.Text = "Veículos associados: " + Dados.EVENTOS[idxEvento].Garagem.Count;
         }
-        
+
+        private void UpdateLabel(int val)
+        {
+             lblVeiAss.Text = "Veículos associados: " + val;
+        }
+
         private void JanelaEvento_Load(object sender, EventArgs e)
         {
             if (idxEvento == -1)
@@ -70,6 +77,8 @@ namespace autosell
             txtOutroLocal.Text = Dados.EVENTOS[idxEvento].Morada;
             dtpInicio.Value = Dados.EVENTOS[idxEvento].DataInicio;
             dtpFim.Value = Dados.EVENTOS[idxEvento].DataFim;
+            this.Text = "Evento \""+txtNome.Text+"\"";
+            UpdateLabel();
         }
 
         public void EditarEsteEvento(int eventoIdx)
@@ -95,6 +104,15 @@ namespace autosell
                 return;
             Evento ev = new Evento(txtNome.Text, chkForaLoja.Checked ? txtOutroLocal.Text : Dados.LOJAS[cmbLojas.SelectedIndex].Morada, dtpInicio.Value, dtpFim.Value);
             Dados.GuardarEvento(ev);
+            foreach(Veiculo v in veiculos)
+            {
+                for(int i = 0; i<Dados.LOJAS.Count; i++)
+                {
+                    if (Dados.LOJAS[i].IdLocal == v.IdLocal)
+                        Dados.MudarLocalVeiculo(v, Dados.LOJAS[i], ev);
+                }
+            }
+            done = true;
             Hide();
         }
 
@@ -106,6 +124,7 @@ namespace autosell
             Dados.EVENTOS[idxEvento].Morada = chkForaLoja.Checked ? txtOutroLocal.Text : Dados.LOJAS[cmbLojas.SelectedIndex].Morada;
             Dados.EVENTOS[idxEvento].DataInicio = dtpInicio.Value;
             Dados.EVENTOS[idxEvento].DataFim = dtpFim.Value;
+            done = true;
             Hide();
         }
 
@@ -152,6 +171,15 @@ namespace autosell
             cmbLojas.Enabled = !chkForaLoja.Checked;
             txtOutroLocal.Enabled = chkForaLoja.Checked;
             txtOutroLocal.ReadOnly = !chkForaLoja.Checked;
+        }
+
+        private void btnAssociarVeiculos_Click(object sender, EventArgs e)
+        {
+            SelecionarVeiculos sv = new SelecionarVeiculos();
+            sv.PrepararListasVeiculos(veiculos);
+            sv.ShowDialog();
+            veiculos = sv.veiculosSelected;
+            UpdateLabel(veiculos.Count);
         }
     }
 }
