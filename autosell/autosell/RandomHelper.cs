@@ -220,13 +220,21 @@ namespace autosell
             //Gerar Transacoes
             Veiculo veiculoPlaceholder = GenVeiculo(Dados.LOJAS[0]);
             Veiculo veiculoPlaceholder2 = GenVeiculo(Dados.LOJAS[0]);
+            DateTime dat;
             for (int i = 0; i < 15; i++)
-                Dados.TRANSACOES.Add(new(TipoTransacao.Venda, veiculoPlaceholder, veiculoPlaceholder.Preco, Dados.CLIENTES[i]));
+            {
+                dat = new(2022, rn(1, 12), rn(1, 28));
+                Dados.TRANSACOES.Add(new(TipoTransacao.Venda, veiculoPlaceholder, veiculoPlaceholder.Preco, Dados.CLIENTES[i], dat));
+            }
             
             for (int i = 15; i < 30; i++)
-                Dados.TRANSACOES.Add(new(TipoTransacao.Compra, veiculoPlaceholder, veiculoPlaceholder.Preco / 2, Dados.CLIENTES[i]));
-
-            Dados.TRANSACOES.Add(new(TipoTransacao.Troca, veiculoPlaceholder, 1250, Dados.CLIENTES[0], veiculoPlaceholder2));
+            {
+                dat = new(2022, rn(1, 12), rn(1, 28));
+                Dados.TRANSACOES.Add(new(TipoTransacao.Compra, veiculoPlaceholder, veiculoPlaceholder.Preco / 2, Dados.CLIENTES[i], dat));
+            }
+            
+            dat = new(2022, rn(1, 12), rn(1, 28));
+            Dados.TRANSACOES.Add(new(TipoTransacao.Troca, veiculoPlaceholder, 1250, Dados.CLIENTES[0], veiculoPlaceholder2, dat));
 
         }
 

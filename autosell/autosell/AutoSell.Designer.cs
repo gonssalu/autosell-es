@@ -62,12 +62,23 @@
             this.btnApagarEvento = new System.Windows.Forms.Button();
             this.lstEventos = new System.Windows.Forms.ListBox();
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
+            this.btnAtualizarEstatisticas = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabVeiculos.SuspendLayout();
             this.tabTransacoes.SuspendLayout();
             this.tabEventos.SuspendLayout();
+            this.tabEstatisticas.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -457,12 +468,99 @@
             // 
             // tabEstatisticas
             // 
+            this.tabEstatisticas.Controls.Add(this.groupBox1);
             this.tabEstatisticas.Location = new System.Drawing.Point(4, 29);
             this.tabEstatisticas.Name = "tabEstatisticas";
             this.tabEstatisticas.Size = new System.Drawing.Size(768, 394);
             this.tabEstatisticas.TabIndex = 4;
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
+            // 
+            // btnAtualizarEstatisticas
+            // 
+            this.btnAtualizarEstatisticas.Location = new System.Drawing.Point(262, 75);
+            this.btnAtualizarEstatisticas.Name = "btnAtualizarEstatisticas";
+            this.btnAtualizarEstatisticas.Size = new System.Drawing.Size(160, 29);
+            this.btnAtualizarEstatisticas.TabIndex = 0;
+            this.btnAtualizarEstatisticas.Text = "Atualizar Estatísticas";
+            this.btnAtualizarEstatisticas.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Marca:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btnAtualizarEstatisticas);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(18, 30);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(449, 130);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mais Vendas";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(76, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(165, 27);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(76, 56);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(165, 27);
+            this.textBox2.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Modelo:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Cliente:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(76, 90);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(165, 27);
+            this.textBox3.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(262, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "label8";
             // 
             // AutoSell
             // 
@@ -485,6 +583,9 @@
             this.tabTransacoes.ResumeLayout(false);
             this.tabEventos.ResumeLayout(false);
             this.tabEventos.PerformLayout();
+            this.tabEstatisticas.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +627,14 @@
         private Button btnAdicionarCliente;
         private Button btnApagarCliente;
         private Button btnTroca;
+        private Button btnAtualizarEstatisticas;
+        private GroupBox groupBox1;
+        private Label label8;
+        private TextBox textBox3;
+        private Label label7;
+        private TextBox textBox2;
+        private Label label6;
+        private TextBox textBox1;
+        private Label label5;
     }
 }
