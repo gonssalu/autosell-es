@@ -32,8 +32,7 @@ namespace autosell
 
             //Eventos
             cmbTipoDestino.SelectedIndex = 0;
-            cmbDestino.DataSource = Dados.LOJAS;
-            lstEventos.DataSource = Dados.EVENTOS;
+            AtualizarListaEventos();
 
             Cursor.Current = Cursors.Default;
         }
@@ -82,9 +81,62 @@ namespace autosell
             lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
         }
         #endregion
-        
+
         #region Gerir Eventos
-        
+
+        public void AtualizarListaEventos()
+        {
+            foreach (Evento ev in Dados.EVENTOS)
+                lstEventos.Items.Add(ev);
+        }
+
+        private void EditarEventoClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConsultarEventoClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgendarEventoClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApagarEvento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTipoDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbTipoDestino.SelectedIndex == 0)
+                cmbDestino.DataSource = Dados.LOJAS;
+            else if (cmbTipoDestino.SelectedIndex == 1)
+                cmbDestino.DataSource = Dados.EVENTOS;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoDestino.SelectedIndex == 1)
+            {
+                if (cmbDestino.Items[cmbDestino.SelectedIndex] == lstEventos.Items[lstEventos.SelectedIndex])
+                {
+                    MostrarErro("Não podes enviar os veículos para o mesmo evento!");
+                    return;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Outras coisas
+        public void MostrarErro(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         #endregion
     }
 }
