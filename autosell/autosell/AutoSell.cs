@@ -282,15 +282,13 @@ namespace autosell
                 cmbDestino.DataSource = null;
             }
             else {
-                if (!GetSelectedEvento().Terminado)
-                {
+                if (!GetSelectedEvento().Terminado) {
                     PreencherDestino();
                     cmbTipoDestino.Enabled = true;
                     cmbDestino.Enabled = true;
                     btnFinalizar.Enabled = true;
                 }
-                else
-                {
+                else {
                     cmbTipoDestino.Enabled = false;
                     cmbDestino.Enabled = false;
                     btnFinalizar.Enabled = false;
@@ -398,6 +396,15 @@ namespace autosell
 
         private void btnTroca_Click(object sender, EventArgs e)
         {
+            var trocarVeiculo = new TrocarVeiculosForm(cmbLojasTransacoes.SelectedIndex);
+            trocarVeiculo.ShowDialog();
+
+            var transacoes = new List<Transacao>();
+
+            foreach (var transacao in Dados.TRANSACOES)
+                transacoes.Add(transacao);
+
+            lboxTransacoes.DataSource = transacoes;
         }
 
         #endregion
