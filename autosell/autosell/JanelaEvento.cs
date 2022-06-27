@@ -37,6 +37,7 @@ namespace autosell
                 dtpInicio.Value = DateTime.Now;
                 dtpFim.Value = DateTime.Now;
             }
+            PreencherListaLojas();
         }
 
         public void MostrarEsteEvento(int eventoIdx)
@@ -80,6 +81,12 @@ namespace autosell
             btnAssociarVeiculos.Enabled = false;
             btnGuardar.Enabled = true;
             btnGuardar.Visible = true;
+        }
+
+        private void PreencherListaLojas()
+        {
+            cmbLojas.DataSource = null;
+            cmbLojas.DataSource = Dados.LOJAS;
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
