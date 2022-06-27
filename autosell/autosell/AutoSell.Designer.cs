@@ -33,11 +33,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.tabVeiculos = new System.Windows.Forms.TabPage();
+            this.btnConsultarVeiculo = new System.Windows.Forms.Button();
             this.btnEditarVeiculo = new System.Windows.Forms.Button();
             this.btnAdicionarVeiculo = new System.Windows.Forms.Button();
             this.btnApagarVeiculo = new System.Windows.Forms.Button();
             this.lboxVeiculos = new System.Windows.Forms.ListBox();
             this.tabTransacoes = new System.Windows.Forms.TabPage();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.btnVenda = new System.Windows.Forms.Button();
+            this.btnTroca = new System.Windows.Forms.Button();
+            this.lboxTransacoes = new System.Windows.Forms.ListBox();
             this.tabEventos = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
@@ -51,10 +56,6 @@
             this.tabEstatisticas = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbLojas = new System.Windows.Forms.ComboBox();
-            this.lboxTransacoes = new System.Windows.Forms.ListBox();
-            this.btnTroca = new System.Windows.Forms.Button();
-            this.btnVenda = new System.Windows.Forms.Button();
-            this.btnCompra = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabVeiculos.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // tabVeiculos
             // 
+            this.tabVeiculos.Controls.Add(this.btnConsultarVeiculo);
             this.tabVeiculos.Controls.Add(this.btnEditarVeiculo);
             this.tabVeiculos.Controls.Add(this.btnAdicionarVeiculo);
             this.tabVeiculos.Controls.Add(this.btnApagarVeiculo);
@@ -135,6 +137,16 @@
             this.tabVeiculos.TabIndex = 1;
             this.tabVeiculos.Text = "Veículos";
             this.tabVeiculos.UseVisualStyleBackColor = true;
+            // 
+            // btnConsultarVeiculo
+            // 
+            this.btnConsultarVeiculo.Location = new System.Drawing.Point(347, 5);
+            this.btnConsultarVeiculo.Name = "btnConsultarVeiculo";
+            this.btnConsultarVeiculo.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarVeiculo.TabIndex = 4;
+            this.btnConsultarVeiculo.Text = "Consultar";
+            this.btnConsultarVeiculo.UseVisualStyleBackColor = true;
+            this.btnConsultarVeiculo.Click += new System.EventHandler(this.btnConsultarVeiculo_Click);
             // 
             // btnEditarVeiculo
             // 
@@ -188,6 +200,42 @@
             this.tabTransacoes.TabIndex = 2;
             this.tabTransacoes.Text = "Transações";
             this.tabTransacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnCompra
+            // 
+            this.btnCompra.Location = new System.Drawing.Point(428, 5);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(75, 23);
+            this.btnCompra.TabIndex = 8;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.UseVisualStyleBackColor = true;
+            // 
+            // btnVenda
+            // 
+            this.btnVenda.Location = new System.Drawing.Point(509, 5);
+            this.btnVenda.Name = "btnVenda";
+            this.btnVenda.Size = new System.Drawing.Size(75, 23);
+            this.btnVenda.TabIndex = 7;
+            this.btnVenda.Text = "Venda";
+            this.btnVenda.UseVisualStyleBackColor = true;
+            // 
+            // btnTroca
+            // 
+            this.btnTroca.Location = new System.Drawing.Point(590, 5);
+            this.btnTroca.Name = "btnTroca";
+            this.btnTroca.Size = new System.Drawing.Size(75, 23);
+            this.btnTroca.TabIndex = 6;
+            this.btnTroca.Text = "Troca";
+            this.btnTroca.UseVisualStyleBackColor = true;
+            // 
+            // lboxTransacoes
+            // 
+            this.lboxTransacoes.FormattingEnabled = true;
+            this.lboxTransacoes.ItemHeight = 15;
+            this.lboxTransacoes.Location = new System.Drawing.Point(0, 32);
+            this.lboxTransacoes.Name = "lboxTransacoes";
+            this.lboxTransacoes.Size = new System.Drawing.Size(671, 259);
+            this.lboxTransacoes.TabIndex = 5;
             // 
             // tabEventos
             // 
@@ -307,6 +355,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(19, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 15);
@@ -317,47 +366,11 @@
             // 
             this.cmbLojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLojas.FormattingEnabled = true;
-            this.cmbLojas.Location = new System.Drawing.Point(48, 38);
+            this.cmbLojas.Location = new System.Drawing.Point(52, 38);
             this.cmbLojas.Name = "cmbLojas";
             this.cmbLojas.Size = new System.Drawing.Size(166, 23);
             this.cmbLojas.TabIndex = 4;
             this.cmbLojas.SelectedIndexChanged += new System.EventHandler(this.cmbLojas_SelectedIndexChanged);
-            // 
-            // lboxTransacoes
-            // 
-            this.lboxTransacoes.FormattingEnabled = true;
-            this.lboxTransacoes.ItemHeight = 15;
-            this.lboxTransacoes.Location = new System.Drawing.Point(0, 32);
-            this.lboxTransacoes.Name = "lboxTransacoes";
-            this.lboxTransacoes.Size = new System.Drawing.Size(671, 259);
-            this.lboxTransacoes.TabIndex = 5;
-            // 
-            // btnTroca
-            // 
-            this.btnTroca.Location = new System.Drawing.Point(590, 5);
-            this.btnTroca.Name = "btnTroca";
-            this.btnTroca.Size = new System.Drawing.Size(75, 23);
-            this.btnTroca.TabIndex = 6;
-            this.btnTroca.Text = "Troca";
-            this.btnTroca.UseVisualStyleBackColor = true;
-            // 
-            // btnVenda
-            // 
-            this.btnVenda.Location = new System.Drawing.Point(509, 5);
-            this.btnVenda.Name = "btnVenda";
-            this.btnVenda.Size = new System.Drawing.Size(75, 23);
-            this.btnVenda.TabIndex = 7;
-            this.btnVenda.Text = "Venda";
-            this.btnVenda.UseVisualStyleBackColor = true;
-            // 
-            // btnCompra
-            // 
-            this.btnCompra.Location = new System.Drawing.Point(428, 5);
-            this.btnCompra.Name = "btnCompra";
-            this.btnCompra.Size = new System.Drawing.Size(75, 23);
-            this.btnCompra.TabIndex = 8;
-            this.btnCompra.Text = "Compra";
-            this.btnCompra.UseVisualStyleBackColor = true;
             // 
             // AutoSell
             // 
@@ -416,5 +429,6 @@
         private Button btnVenda;
         private Button btnTroca;
         private ListBox lboxTransacoes;
+        private Button btnConsultarVeiculo;
     }
 }
