@@ -31,7 +31,7 @@ namespace autosell
         }
         public override string ToString()
         {
-            return Nome + " (" + DataInicio.ToString("dd/MMM") + " a " + DataFim.ToString("dd/MMM") + ")";
+            return Nome + (Terminado?"":" (" + DataInicio.ToString("dd/MMM") + " a " + DataFim.ToString("dd/MMM") + ")");
         }
     }
 }

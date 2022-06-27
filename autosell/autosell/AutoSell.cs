@@ -33,7 +33,7 @@ namespace autosell
             cmbLojasVeiculos.DataSource = Dados.LOJAS;
 
             // Eventos
-            cmbTipoDestino.SelectedIndex = 0;
+            cmbTipoDestino.SelectedIndex = 1;
             AtualizarListaEventos();
 
             Cursor.Current = Cursors.Default;
@@ -97,8 +97,8 @@ namespace autosell
 
         public void AtualizarListaEventos()
         {
-            foreach (Evento ev in Dados.EVENTOS)
-                lstEventos.Items.Add(ev);
+            lstEventos.DataSource = null;
+            lstEventos.DataSource = Dados.EVENTOS;
         }
 
         private void EditarEventoClick(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace autosell
             int idx = lstEventos.SelectedIndex;
             Evento ev = (Evento)lstEventos.Items[idx];
             Dados.RemoverEvento(ev);
-            lstEventos.Items.RemoveAt(idx);
+            AtualizarListaEventos();
             if (cmbTipoDestino.SelectedIndex == 1)
                 PreencherComTodosOsEventos();
             return ev.Nome;
@@ -134,31 +134,85 @@ namespace autosell
 
         private void cmbTipoDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipoDestino.SelectedIndex == 0)
-                PreencherComTodasAsLojas();
-            else if (cmbTipoDestino.SelectedIndex == 1)
-                PreencherComTodosOsEventos();
+            PreencherDestino();
+        }
+
+        private void PreencherDestino()
+        {
+            if(lstEventos.SelectedIndex!=-1)
+                if (cmbTipoDestino.SelectedIndex == 0)
+                    PreencherComTodasAsLojas();
+                else if (cmbTipoDestino.SelectedIndex == 1)
+                    PreencherComTodosOsEventos();
+            if (cmbDestino.Items.Count > 0)
+                cmbDestino.SelectedIndex = 0;
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            if (!SelecionouEvento())
+                return;
+
+            if (cmbDestino.SelectedIndex == -1 || cmbDestino.SelectedItem==null)
+            {
+                MostrarErro("Tem de selecionar um destino válido!");
+                return;
+            }
+
             if (cmbTipoDestino.SelectedIndex == 1) {
                 if (cmbDestino.Items[cmbDestino.SelectedIndex] == lstEventos.Items[lstEventos.SelectedIndex]) {
                     MostrarErro("Não podes enviar os veículos para o mesmo evento!");
                     return;
                 }
             }
+
+            Evento ev = GetSelectedEvento();
+            Local destino = (Local)cmbDestino.SelectedItem;
+            if (cmbTipoDestino.SelectedIndex == 0)
+            {
+                Loja lj = (Loja)destino;
+                if (ev.Garagem.Count > lj.TamanhoGaragem - lj.Garagem.Count)
+                {
+                    MostrarErro("Essa loja não tem espaço para todos os veículos deste evento!");
+                    return;
+                }
+            }
+
+            ev.Terminado = true;
+
+            Veiculo[] vcs = new Veiculo[ev.Garagem.Count];
+            ev.Garagem.CopyTo(vcs);
+            foreach (Veiculo ve in vcs)
+                Dados.MudarLocalVeiculo(ve, ev, destino);
+            
+            AtualizarListaEventos();
+        }
+
+        private Evento GetSelectedEvento()
+        {
+            return (Evento)lstEventos.Items[lstEventos.SelectedIndex];
         }
 
         private void PreencherComTodasAsLojas()
         {
-            cmbDestino.DataSource = null;
-            cmbDestino.DataSource = Dados.LOJAS;
+            cmbDestino.Items.Clear();
+            Evento ev = GetSelectedEvento();
+            foreach (Loja lj in Dados.LOJAS)
+            {
+                if (lj.Garagem.Count + ev.Garagem.Count <= lj.TamanhoGaragem)
+                    cmbDestino.Items.Add(lj);
+            }
+            if (cmbDestino.Items.Count == 0)
+            {
+                MessageBox.Show("Não há nenhuma loja com espaço suficiente para os veículos desse evento!", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbTipoDestino.SelectedIndex = 1;
+            }
         }
         private void PreencherComTodosOsEventos()
         {
-            cmbDestino.DataSource = null;
-            cmbDestino.DataSource = Dados.EVENTOS;
+            cmbDestino.Items.Clear();
+            foreach (Evento ev in Dados.EVENTOS)
+                cmbDestino.Items.Add(ev);
         }
 
         private bool SelecionouEvento()
@@ -228,5 +282,23 @@ namespace autosell
         }
 
         #endregion
+
+        private void lstEventos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstEventos.SelectedIndex == -1)
+            {
+                cmbTipoDestino.Enabled = false;
+                cmbDestino.Enabled = false;
+                btnFinalizar.Enabled = false;
+                cmbDestino.DataSource = null;
+            }
+            else
+            {
+                PreencherDestino();
+                cmbTipoDestino.Enabled = true;
+                cmbDestino.Enabled = true;
+                btnFinalizar.Enabled = true;
+            }
+        }
     }
 }
