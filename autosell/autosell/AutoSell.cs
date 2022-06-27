@@ -41,6 +41,7 @@ namespace autosell
 
             // Transações
             lboxTransacoes.DataSource = Dados.TRANSACOES;
+            cmbLojasTransacoes.DataSource = Dados.LOJAS;
 
             //Estatísticas
             dtpInicio1.Value = DateTime.Now;
@@ -156,6 +157,7 @@ namespace autosell
             Evento ev = (Evento) lstEventos.Items[idx];
             Dados.RemoverEvento(ev);
             AtualizarListaEventos();
+
             if (cmbTipoDestino.SelectedIndex == 1)
                 PreencherComTodosOsEventos();
             return ev.Nome;
@@ -168,11 +170,12 @@ namespace autosell
 
         private void PreencherDestino()
         {
-            if(lstEventos.SelectedIndex!=-1)
+            if (lstEventos.SelectedIndex != -1)
                 if (cmbTipoDestino.SelectedIndex == 0)
                     PreencherComTodasAsLojas();
                 else if (cmbTipoDestino.SelectedIndex == 1)
                     PreencherComTodosOsEventos();
+
             if (cmbDestino.Items.Count > 0)
                 cmbDestino.SelectedIndex = 0;
         }
@@ -182,8 +185,7 @@ namespace autosell
             if (!SelecionouEvento())
                 return;
 
-            if (cmbDestino.SelectedIndex == -1 || cmbDestino.SelectedItem==null)
-            {
+            if (cmbDestino.SelectedIndex == -1 || cmbDestino.SelectedItem == null) {
                 MostrarErro("Tem de selecionar um destino válido!");
                 return;
             }
@@ -196,12 +198,12 @@ namespace autosell
             }
 
             Evento ev = GetSelectedEvento();
-            Local destino = (Local)cmbDestino.SelectedItem;
-            if (cmbTipoDestino.SelectedIndex == 0)
-            {
-                Loja lj = (Loja)destino;
-                if (ev.Garagem.Count > lj.TamanhoGaragem - lj.Garagem.Count)
-                {
+            Local destino = (Local) cmbDestino.SelectedItem;
+
+            if (cmbTipoDestino.SelectedIndex == 0) {
+                Loja lj = (Loja) destino;
+
+                if (ev.Garagem.Count > lj.TamanhoGaragem - lj.Garagem.Count) {
                     MostrarErro("Essa loja não tem espaço para todos os veículos deste evento!");
                     return;
                 }
@@ -211,29 +213,31 @@ namespace autosell
 
             Veiculo[] vcs = new Veiculo[ev.Garagem.Count];
             ev.Garagem.CopyTo(vcs);
+
             foreach (Veiculo ve in vcs)
                 Dados.MudarLocalVeiculo(ve, ev, destino);
-            
+
             AtualizarListaEventos();
         }
 
         private Evento GetSelectedEvento()
         {
-            return (Evento)lstEventos.Items[lstEventos.SelectedIndex];
+            return (Evento) lstEventos.Items[lstEventos.SelectedIndex];
         }
 
         private void PreencherComTodasAsLojas()
         {
             cmbDestino.Items.Clear();
             Evento ev = GetSelectedEvento();
-            foreach (Loja lj in Dados.LOJAS)
-            {
+
+            foreach (Loja lj in Dados.LOJAS) {
                 if (lj.Garagem.Count + ev.Garagem.Count <= lj.TamanhoGaragem)
                     cmbDestino.Items.Add(lj);
             }
-            if (cmbDestino.Items.Count == 0)
-            {
-                MessageBox.Show("Não há nenhuma loja com espaço suficiente para os veículos desse evento!", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            if (cmbDestino.Items.Count == 0) {
+                MessageBox.Show("Não há nenhuma loja com espaço suficiente para os veículos desse evento!", "Oops",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbTipoDestino.SelectedIndex = 1;
             }
         }
@@ -241,6 +245,7 @@ namespace autosell
         private void PreencherComTodosOsEventos()
         {
             cmbDestino.Items.Clear();
+
             foreach (Evento ev in Dados.EVENTOS)
                 cmbDestino.Items.Add(ev);
         }
@@ -257,15 +262,13 @@ namespace autosell
 
         private void lstEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstEventos.SelectedIndex == -1)
-            {
+            if (lstEventos.SelectedIndex == -1) {
                 cmbTipoDestino.Enabled = false;
                 cmbDestino.Enabled = false;
                 btnFinalizar.Enabled = false;
                 cmbDestino.DataSource = null;
             }
-            else
-            {
+            else {
                 PreencherDestino();
                 cmbTipoDestino.Enabled = true;
                 cmbDestino.Enabled = true;
@@ -346,7 +349,7 @@ namespace autosell
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
-            var comprarVeiculo = new ComprarVeiculoForm();
+            var comprarVeiculo = new ComprarVeiculoForm(tabControl1.SelectedIndex);
             comprarVeiculo.ShowDialog();
 
             var transacoes = new List<Transacao>();
@@ -368,23 +371,25 @@ namespace autosell
         #endregion
 
         #region Estatisticas
+
         private void btnAtualizarEstatisticas_Click(object sender, EventArgs e)
         {
-            if (dtpInicio1.Value > dtpFim1.Value)
-            {
+            if (dtpInicio1.Value > dtpFim1.Value) {
                 MostrarErro("A data de início da Estatística 1 não pode ser posterior à data de fim!");
                 return;
             }
-            if (dtpInicio2.Value > dtpFim2.Value)
-            {
+
+            if (dtpInicio2.Value > dtpFim2.Value) {
                 MostrarErro("A data de início da Estatística 2 não pode ser posterior à data de fim!");
                 return;
             }
+
             PreencherEstatisticas();
             MostrarSucesso("As estatísticas foram calculadas com sucesso!");
         }
 
-        private void GetEstatisticasFor(DateTime inicio, DateTime fim, out string marca, out string modelo, out string cliente, out double totalMarca, out double totalModelo, out double totalCliente, out double total)
+        private void GetEstatisticasFor(DateTime inicio, DateTime fim, out string marca, out string modelo, out string cliente,
+                                        out double totalMarca, out double totalModelo, out double totalCliente, out double total)
         {
             total = 0;
             totalCliente = 0;
@@ -396,12 +401,10 @@ namespace autosell
             Dictionary<String, double> totalMarcas = new();
             Dictionary<String, double> totalModelos = new();
             Dictionary<String, double> totalClientes = new();
-            foreach (Transacao tr in Dados.TRANSACOES)
-            {
-                if (tr.Data >= inicio && tr.Data <= fim)
-                {
-                    if (tr.Tipo != TipoTransacao.Troca)
-                    {
+
+            foreach (Transacao tr in Dados.TRANSACOES) {
+                if (tr.Data >= inicio && tr.Data <= fim) {
+                    if (tr.Tipo != TipoTransacao.Troca) {
                         total += tr.Valor;
                     }
                 }
@@ -410,11 +413,10 @@ namespace autosell
 
         private void PreencherEstatisticas()
         {
-            foreach (Transacao tr in Dados.TRANSACOES)
-            {
-                
+            foreach (Transacao tr in Dados.TRANSACOES) {
             }
         }
+
         #endregion
 
         #region Outras coisas
