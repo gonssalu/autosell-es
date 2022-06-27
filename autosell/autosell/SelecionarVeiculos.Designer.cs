@@ -34,6 +34,8 @@
             this.btnDesselecionar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.cmbLoja1 = new System.Windows.Forms.ComboBox();
+            this.cmbLoja2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lstFirst
@@ -98,11 +100,35 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // cmbLoja1
+            // 
+            this.cmbLoja1.Enabled = false;
+            this.cmbLoja1.FormattingEnabled = true;
+            this.cmbLoja1.Location = new System.Drawing.Point(12, 24);
+            this.cmbLoja1.Name = "cmbLoja1";
+            this.cmbLoja1.Size = new System.Drawing.Size(277, 28);
+            this.cmbLoja1.TabIndex = 6;
+            this.cmbLoja1.Visible = false;
+            this.cmbLoja1.SelectedIndexChanged += new System.EventHandler(this.cmbLoja1_SelectedIndexChanged);
+            // 
+            // cmbLoja2
+            // 
+            this.cmbLoja2.Enabled = false;
+            this.cmbLoja2.FormattingEnabled = true;
+            this.cmbLoja2.Location = new System.Drawing.Point(451, 24);
+            this.cmbLoja2.Name = "cmbLoja2";
+            this.cmbLoja2.Size = new System.Drawing.Size(277, 28);
+            this.cmbLoja2.TabIndex = 7;
+            this.cmbLoja2.Visible = false;
+            this.cmbLoja2.SelectedIndexChanged += new System.EventHandler(this.cmbLoja2_SelectedIndexChanged);
+            // 
             // SelecionarVeiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 323);
+            this.Controls.Add(this.cmbLoja2);
+            this.Controls.Add(this.cmbLoja1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnDesselecionar);
@@ -126,5 +152,7 @@
         private Button btnDesselecionar;
         private Button btnConfirmar;
         private Button btnVoltar;
+        private ComboBox cmbLoja1;
+        private ComboBox cmbLoja2;
     }
 }

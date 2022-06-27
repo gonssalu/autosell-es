@@ -54,6 +54,42 @@ namespace autosell
 
         #region Gerir Veiculos
 
+        private void btnTransferir_Click(object sender, EventArgs e)
+        {
+            SelecionarVeiculos sv = new SelecionarVeiculos();
+            sv.PrepararLojas();
+            sv.ShowDialog();
+            if (sv.done)
+            {
+                foreach (Veiculo v in sv.veiculos)
+                {
+                    if (v.IdLocal != Dados.LOJAS[sv.cmb1idx].IdLocal)
+                        Dados.MudarLocalVeiculo(v, Dados.LOJAS[sv.cmb2idx], Dados.LOJAS[sv.cmb1idx]);
+                }
+
+                foreach (Veiculo v in sv.veiculosSelected)
+                {
+                    if (v.IdLocal != Dados.LOJAS[sv.cmb2idx].IdLocal)
+                        Dados.MudarLocalVeiculo(v, Dados.LOJAS[sv.cmb1idx], Dados.LOJAS[sv.cmb2idx]);
+                }
+
+                AtualizarListaVeiculos();
+
+                MostrarSucesso("Os veículos foram transferidos com sucesso!");
+                
+            }
+        }
+
+        private void AtualizarListaVeiculos()
+        {
+            var veiculos = new List<Veiculo>();
+
+            foreach (var veiculo in Dados.LOJAS[cmbLojasVeiculos.SelectedIndex].Garagem)
+                veiculos.Add(veiculo);
+
+            lboxVeiculos.DataSource = veiculos;
+        }
+
         private void btnConsultarVeiculo_Click(object sender, EventArgs e)
         {
             if (!SelecionouVeiculo()) return;

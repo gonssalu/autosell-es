@@ -102,6 +102,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAtualizarEstatisticas = new System.Windows.Forms.Button();
+            this.btnTransferir = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -231,6 +232,7 @@
             // 
             // tabVeiculos
             // 
+            this.tabVeiculos.Controls.Add(this.btnTransferir);
             this.tabVeiculos.Controls.Add(this.label3);
             this.tabVeiculos.Controls.Add(this.cmbLojasVeiculos);
             this.tabVeiculos.Controls.Add(this.btnConsultarVeiculo);
@@ -894,6 +896,16 @@
             this.btnAtualizarEstatisticas.UseVisualStyleBackColor = true;
             this.btnAtualizarEstatisticas.Click += new System.EventHandler(this.btnAtualizarEstatisticas_Click);
             // 
+            // btnTransferir
+            // 
+            this.btnTransferir.Location = new System.Drawing.Point(305, 7);
+            this.btnTransferir.Name = "btnTransferir";
+            this.btnTransferir.Size = new System.Drawing.Size(86, 31);
+            this.btnTransferir.TabIndex = 6;
+            this.btnTransferir.Text = "Transferir";
+            this.btnTransferir.UseVisualStyleBackColor = true;
+            this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
+            // 
             // AutoSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1007,5 +1019,6 @@
         private Label label19;
         private ComboBox cmbLojasTransacoes;
         private Label label20;
+        private Button btnTransferir;
     }
 }
