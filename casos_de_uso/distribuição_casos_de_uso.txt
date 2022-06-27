@@ -1,0 +1,5 @@
+Alexandre: Consultar/Adicionar/Editar/Remover Veículo & Trocar/Vender/Comprar transações/Registar Cliente/Editar Cliente
+Diogo: Consultar/Adicionar/Editar/Remover Peças & Realizar/Ver/Aceitar/Eliminar Pedidos de peças/Consultar Cliente
+Gonçalo: Consultar/Agendar/Editar/Remover Evento & Ver estatísticas/Reparar Veículos/Transferir Veículos/Finalizar Evento/Remover Cliente
+
+Link para o repositório no GitHub: https://github.com/trwygon/autosell-es
