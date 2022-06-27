@@ -234,7 +234,7 @@ namespace autosell
             }
             
             dat = new(2022, rn(1, 12), rn(1, 28));
-            Dados.TRANSACOES.Add(new(TipoTransacao.Troca, veiculoPlaceholder, 1250, Dados.CLIENTES[0], veiculoPlaceholder2, dat));
+            Dados.TRANSACOES.Add(new(TipoTransacao.Troca, veiculoPlaceholder2, 1250, Dados.CLIENTES[0], veiculoPlaceholder, dat));
 
         }
 
