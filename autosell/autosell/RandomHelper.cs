@@ -256,8 +256,5 @@ namespace autosell
             USED_PECA_LOJA.Clear();
 
         }
-
-        //TEMPORARY
-        //public static List<Veiculo> VEICULOS = new();
     }
 }
