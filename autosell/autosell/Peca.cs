@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Peca
+    public class Peca
     {
         public String Nome { get; }
         public int Unidades { get; set; }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Evento:Local
+    public class Evento:Local
     {
-        public String Nome { get; }
-        public DateTime DataInicio { get; }
-        public DateTime DataFim { get; }
+        public String Nome { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
         public Boolean Terminado { get; set; }
 
         public Evento(String nome, String morada, DateTime dataInicio, DateTime dataFim) : base(morada)
@@ -31,7 +31,7 @@ namespace autosell
         }
         public override string ToString()
         {
-            return Nome + (Terminado?"":" (" + DataInicio.ToString("dd/MMM") + " a " + DataFim.ToString("dd/MMM") + ")");
+            return Nome + " (" + DataInicio.ToString("dd/MMM") + " a " + DataFim.ToString("dd/MMM") + ") " + (Terminado?"[TERMINADO]":"[A DECORRER]");
         }
     }
 }

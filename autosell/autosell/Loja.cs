@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Loja : Local
+    public class Loja : Local
     {
         public String Nome { get; }
         public int TamanhoGaragem { get; }
