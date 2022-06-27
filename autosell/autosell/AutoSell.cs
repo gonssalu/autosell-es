@@ -39,6 +39,9 @@ namespace autosell
             // Clientes
             lboxClientes.DataSource = Dados.CLIENTES;
 
+            // Transações
+            lboxTransacoes.DataSource = Dados.TRANSACOES;
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -262,15 +265,39 @@ namespace autosell
 
         #endregion
 
+        #region Transações
+
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            var comprarVeiculo = new ComprarVeiculoForm();
+            comprarVeiculo.ShowDialog();
+
+            var transacoes = new List<Transacao>();
+
+            foreach (var transacao in Dados.TRANSACOES)
+                transacoes.Add(transacao);
+
+            lboxTransacoes.DataSource = transacoes;
+        }
+
+        private void btnVenda_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnTroca_Click(object sender, EventArgs e)
+        {
+        }
+
+        #endregion
 
         #region Outras coisas
 
-        public void MostrarErro(string mensagem)
+        private void MostrarErro(string mensagem)
         {
             MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void MostrarSucesso(string mensagem)
+        private void MostrarSucesso(string mensagem)
         {
             MessageBox.Show(mensagem, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

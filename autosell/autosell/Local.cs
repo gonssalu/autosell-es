@@ -19,10 +19,12 @@ namespace autosell
             Morada = morada;
             Garagem = new List<Veiculo>();
         }
+
         public void AdicionarVeiculo(Veiculo veiculo)
         {
             Garagem.Add(veiculo);
         }
+
         public void RemoverVeiculo(Veiculo veiculo)
         {
             Garagem.Remove(veiculo);

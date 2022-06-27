@@ -241,7 +241,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMarca);
             this.Name = "DadosVeiculoForm";
-            this.Text = "DadosVeiculo";
+            this.Text = "Dados do Veículo";
             this.ResumeLayout(false);
             this.PerformLayout();
 
