@@ -76,7 +76,10 @@ namespace autosell
 
         public override string ToString()
         {
-            return Tipo.ToString() + " de " + Veiculo + " para " + Cliente + " no valor de " +
+            if(Tipo==TipoTransacao.Troca)
+                return "[" + Data.ToString("d/MM/yy HH:mm") + "] " + Tipo.ToString() + " | " + Veiculo + " | " + Cliente.Nome + " | Valor extra: " +
+                   Valor.ToString(CultureInfo.InvariantCulture) + "€";
+            return "[" + Data.ToString("d/MM/yy HH:mm") + "] " + Tipo.ToString() + " | " + Veiculo + " | " + Cliente.Nome + " | Valor: " +
                    Valor.ToString(CultureInfo.InvariantCulture) + "€";
         }
     }
