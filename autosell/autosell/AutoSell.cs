@@ -381,11 +381,39 @@ namespace autosell
                 return;
             }
             PreencherEstatisticas();
+            MostrarSucesso("As estatísticas foram calculadas com sucesso!");
+        }
+
+        private void GetEstatisticasFor(DateTime inicio, DateTime fim, out string marca, out string modelo, out string cliente, out double totalMarca, out double totalModelo, out double totalCliente, out double total)
+        {
+            total = 0;
+            totalCliente = 0;
+            totalMarca = 0;
+            totalModelo = 0;
+            cliente = "";
+            marca = "";
+            modelo = "";
+            Dictionary<String, double> totalMarcas = new();
+            Dictionary<String, double> totalModelos = new();
+            Dictionary<String, double> totalClientes = new();
+            foreach (Transacao tr in Dados.TRANSACOES)
+            {
+                if (tr.Data >= inicio && tr.Data <= fim)
+                {
+                    if (tr.Tipo != TipoTransacao.Troca)
+                    {
+                        total += tr.Valor;
+                    }
+                }
+            }
         }
 
         private void PreencherEstatisticas()
         {
-            throw new NotImplementedException();
+            foreach (Transacao tr in Dados.TRANSACOES)
+            {
+                
+            }
         }
         #endregion
 
