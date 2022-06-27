@@ -137,8 +137,6 @@ namespace autosell
             foreach (Veiculo v in Dados.LOJAS[cmbLoja1.SelectedIndex].Garagem)
                  veiculos.Add(v);
             lstFirst.DataSource = veiculos;
-            btnSelecionar.Enabled = true;
-            btnDesselecionar.Enabled = true;
         }
 
         private void cmbLoja2_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,8 +158,6 @@ namespace autosell
             foreach (Veiculo v in Dados.LOJAS[cmbLoja2.SelectedIndex].Garagem)
                 veiculosSelected.Add(v);
             lstSecond.DataSource = veiculosSelected;
-            btnSelecionar.Enabled = true;
-            btnDesselecionar.Enabled = true;
         }
     }
 }

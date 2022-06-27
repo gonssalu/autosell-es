@@ -13,7 +13,6 @@ namespace autosell
         public static List<Loja> LOJAS = new();
         public static List<Peca> PECAS = new();
         public static List<Transacao> TRANSACOES = new();
-        public static Sede SEDE = new();
 
         public static int PROXIMO_ID_LOCAL = 0;
 
@@ -37,6 +36,11 @@ namespace autosell
         public static void GuardarEvento(Evento ev)
         {
             EVENTOS.Add(ev);
+        }
+
+        public static Sede GetSede()
+        {
+            return (Sede)LOJAS[LOJAS.Count - 1];
         }
     }
 }

@@ -236,6 +236,25 @@ namespace autosell
             dat = new(2022, rn(1, 12), rn(1, 28));
             Dados.TRANSACOES.Add(new(TipoTransacao.Troca, veiculoPlaceholder2, 1250, Dados.CLIENTES[0], veiculoPlaceholder, dat));
 
+            //Popular a Sede
+            Sede sede = new();
+            for (int i = 0; i < rn(sede.TamanhoGaragem * 5 / 100, sede.TamanhoGaragem * 40 / 100); i++)
+                sede.Garagem.Add(GenVeiculo(sede));
+
+            //Gerar Peças
+            foreach (String comb in nomesComb)
+                Dados.PECAS.Add(new(comb, rn(6000, 9000), 1000, sede));
+
+            foreach (String comb in nomesCombExtra)
+                Dados.PECAS.Add(new(comb, rn(700, 3000), 500, sede));
+
+            for (int i = 0; i < 30; i++)
+                Dados.PECAS.Add(GenPeca(sede));
+
+
+            Dados.LOJAS.Add(sede);
+            USED_PECA_LOJA.Clear();
+
         }
 
         //TEMPORARY
