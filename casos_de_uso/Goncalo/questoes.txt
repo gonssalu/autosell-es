@@ -1,5 +1,0 @@
-Em ecrãs iguais mas com o nome de implementação diferente, temos de especificar o caso todo? (ex: Agendar/Editar Evento)
-
-Existe alguma maneira de simplificar casos "vice-versa" (exemplo: ver "Fora da loja")
-
-Aquela parte inicial que o professor disse que bastava descrever uma vez (definimos que seria nos casos de uso Criar), deve ser uma vez por pessoa ou uma vez no projeto todo? (ex: Remover Cliente)
