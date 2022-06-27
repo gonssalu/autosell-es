@@ -172,7 +172,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(407, 137);
+            this.btnGuardar.Location = new System.Drawing.Point(328, 137);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 16;
@@ -182,7 +182,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(329, 137);
+            this.btnVoltar.Location = new System.Drawing.Point(408, 137);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 17;
