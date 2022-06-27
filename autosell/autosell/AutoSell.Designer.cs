@@ -308,6 +308,7 @@
             this.btnTroca.TabIndex = 13;
             this.btnTroca.Text = "Troca";
             this.btnTroca.UseVisualStyleBackColor = true;
+            this.btnTroca.Click += new System.EventHandler(this.btnTroca_Click);
             // 
             // btnCompra
             // 
@@ -318,6 +319,7 @@
             this.btnCompra.TabIndex = 12;
             this.btnCompra.Text = "Compra";
             this.btnCompra.UseVisualStyleBackColor = true;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
             // 
             // btnVenda
             // 
@@ -328,6 +330,7 @@
             this.btnVenda.TabIndex = 11;
             this.btnVenda.Text = "Venda";
             this.btnVenda.UseVisualStyleBackColor = true;
+            this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
             // 
             // lboxTransacoes
             // 

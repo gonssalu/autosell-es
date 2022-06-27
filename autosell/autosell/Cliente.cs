@@ -20,6 +20,7 @@ namespace autosell
             Telefone = telefone;
             Nif = nif;
         }
+
         public override string ToString()
         {
             return Nome;

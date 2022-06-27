@@ -28,9 +28,9 @@ namespace autosell
             if (!consulta) return;
 
             btnGuardar.Visible = false;
-            txtNome.Enabled = false;
-            txtTelefone.Enabled = false;
-            txtNif.Enabled = false;
+            txtNome.ReadOnly = true;
+            txtTelefone.ReadOnly = true;
+            txtNif.ReadOnly = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

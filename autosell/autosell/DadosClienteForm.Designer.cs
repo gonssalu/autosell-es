@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Name = "DadosClienteForm";
-            this.Text = "DadosClienteForm";
+            this.Text = "Dados do Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

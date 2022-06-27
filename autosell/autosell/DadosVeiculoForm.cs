@@ -39,14 +39,14 @@ namespace autosell
             if (!consulta) return;
 
             btnGuardar.Visible = false;
-            txtMarca.Enabled = false;
-            txtModelo.Enabled = false;
-            txtAno.Enabled = false;
-            txtCor.Enabled = false;
-            txtKms.Enabled = false;
-            txtPreco.Enabled = false;
-            txtNumDonos.Enabled = false;
-            txtDonoAnterior.Enabled = false;
+            txtMarca.ReadOnly = true;
+            txtModelo.ReadOnly = true;
+            txtAno.ReadOnly = true;
+            txtCor.ReadOnly = true;
+            txtKms.ReadOnly = true;
+            txtPreco.ReadOnly = true;
+            txtNumDonos.ReadOnly = true;
+            txtDonoAnterior.ReadOnly = true;
             cmbCombustivel.Enabled = false;
         }
 
