@@ -21,8 +21,8 @@ namespace autosell
         public Double Valor { get; }
         public Cliente Cliente { get; }
         public Veiculo? VeiculoRecebido { get; } // Este é o veículo que o cliente entrega, no caso de uma troca
-        
-        public DateTime Data { get;  }
+        public DateTime Data { get; }
+
         public Transacao(TipoTransacao tipo, Veiculo veiculo, Double valor, Cliente cliente, Veiculo veiculoRecebido)
         {
             if (veiculo == veiculoRecebido)
@@ -48,7 +48,8 @@ namespace autosell
             Data = DateTime.Now;
         }
 
-        public Transacao(TipoTransacao tipo, Veiculo veiculo, Double valor, Cliente cliente, Veiculo veiculoRecebido, DateTime data)
+        public Transacao(TipoTransacao tipo, Veiculo veiculo, Double valor, Cliente cliente, Veiculo veiculoRecebido,
+                         DateTime data)
         {
             if (veiculo == veiculoRecebido)
                 throw new ArgumentException("Não pode trocar um veículo por ele mesmo.", "veiculoRecebido");
@@ -63,7 +64,8 @@ namespace autosell
         public Transacao(TipoTransacao tipo, Veiculo veiculo, Double valor, Cliente cliente, DateTime data)
         {
             if (tipo == TipoTransacao.Troca)
-                throw new ArgumentNullException("VeiculoRecebido", "Não é possível criar uma transação de troca sem o veículo que o cliente entregou.");
+                throw new ArgumentNullException("VeiculoRecebido",
+                                                "Não é possível criar uma transação de troca sem o veículo que o cliente entregou.");
 
             Tipo = tipo;
             Veiculo = veiculo;

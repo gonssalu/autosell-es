@@ -43,6 +43,7 @@
             this.btnRegistarVeiculo.TabIndex = 0;
             this.btnRegistarVeiculo.Text = "Registar Veículo";
             this.btnRegistarVeiculo.UseVisualStyleBackColor = true;
+            this.btnRegistarVeiculo.Click += new System.EventHandler(this.btnRegistarVeiculo_Click);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.btnNovoCliente.TabIndex = 3;
             this.btnNovoCliente.Text = "Novo Cliente";
             this.btnNovoCliente.UseVisualStyleBackColor = true;
+            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
             // 
             // btnVoltar
             // 
@@ -79,6 +81,7 @@
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnGuardar
             // 
@@ -88,6 +91,7 @@
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // ComprarVeiculoForm
             // 
