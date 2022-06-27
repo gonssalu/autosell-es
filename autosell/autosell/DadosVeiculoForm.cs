@@ -16,7 +16,7 @@ namespace autosell
         private readonly int _lojaId;
         private readonly int _veiculoId;
 
-        public DadosVeiculoForm(int lojaId, int veiculoId = -1)
+        public DadosVeiculoForm(int lojaId, int veiculoId = -1, bool consulta = false)
         {
             InitializeComponent();
 
@@ -35,6 +35,18 @@ namespace autosell
             txtNumDonos.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].NrDonos.ToString();
             txtDonoAnterior.Text = Dados.LOJAS[_lojaId].Garagem[veiculoId].NomeDonoAnterior;
             cmbCombustivel.SelectedItem = Dados.LOJAS[_lojaId].Garagem[veiculoId].Combustivel;
+
+            if (!consulta) return;
+
+            txtMarca.Enabled = false;
+            txtModelo.Enabled = false;
+            txtAno.Enabled = false;
+            txtCor.Enabled = false;
+            txtKms.Enabled = false;
+            txtPreco.Enabled = false;
+            txtNumDonos.Enabled = false;
+            txtDonoAnterior.Enabled = false;
+            cmbCombustivel.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

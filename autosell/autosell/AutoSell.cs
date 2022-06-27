@@ -23,6 +23,7 @@ namespace autosell
             Cursor.Current = Cursors.WaitCursor;
             cmbLojas.DataSource = Dados.LOJAS;
         }
+
         private void AutoSell_Shown(object sender, EventArgs e)
         {
             RandomHelper.PREENCHER();
@@ -36,8 +37,16 @@ namespace autosell
 
             Cursor.Current = Cursors.Default;
         }
-        
+
         #region Gerir Veiculos
+
+        private void btnConsultarVeiculo_Click(object sender, EventArgs e)
+        {
+            var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex, lboxVeiculos.SelectedIndex, true);
+            dadosVeiculo.ShowDialog();
+        }
+
+
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
         {
             var dadosVeiculo = new DadosVeiculoForm(cmbLojas.SelectedIndex);
@@ -80,6 +89,7 @@ namespace autosell
             lboxVeiculos.DataSource = null;
             lboxVeiculos.DataSource = Dados.LOJAS[cmbLojas.SelectedIndex].Garagem;
         }
+
         #endregion
 
         #region Gerir Eventos
