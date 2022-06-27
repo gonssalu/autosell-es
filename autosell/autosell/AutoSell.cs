@@ -100,10 +100,12 @@ namespace autosell
 
         private void EditarEventoClick(object sender, EventArgs e)
         {
+            if (!SelecionouEvento()) return;
         }
 
         private void ConsultarEventoClick(object sender, EventArgs e)
         {
+            if (!SelecionouEvento()) return;
         }
 
         private void AgendarEventoClick(object sender, EventArgs e)
@@ -112,14 +114,27 @@ namespace autosell
 
         private void btnApagarEvento_Click(object sender, EventArgs e)
         {
+            if (!SelecionouEvento()) return;
+            MostrarSucesso("Evento \"" + RemoverEvento() + "\" removido com sucesso!");
+        }
+        
+        private string RemoverEvento()
+        {
+            int idx = lstEventos.SelectedIndex;
+            Evento ev = (Evento)lstEventos.Items[idx];
+            Dados.RemoverEvento(ev);
+            lstEventos.Items.RemoveAt(idx);
+            if (cmbTipoDestino.SelectedIndex == 1)
+                PreencherComTodosOsEventos();
+            return ev.Nome;
         }
 
         private void cmbTipoDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipoDestino.SelectedIndex == 0)
-                cmbDestino.DataSource = Dados.LOJAS;
+                PreencherComTodasAsLojas();
             else if (cmbTipoDestino.SelectedIndex == 1)
-                cmbDestino.DataSource = Dados.EVENTOS;
+                PreencherComTodosOsEventos();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -130,6 +145,27 @@ namespace autosell
                     return;
                 }
             }
+        }
+
+        private void PreencherComTodasAsLojas()
+        {
+            cmbDestino.DataSource = null;
+            cmbDestino.DataSource = Dados.LOJAS;
+        }
+        private void PreencherComTodosOsEventos()
+        {
+            cmbDestino.DataSource = null;
+            cmbDestino.DataSource = Dados.EVENTOS;
+        }
+
+        private bool SelecionouEvento()
+        {
+            if (lstEventos.SelectedIndex == -1)
+            {
+                MostrarErro("Tem de selecionar um evento!");
+                return false;
+            }
+            return true;
         }
 
         #endregion

@@ -23,5 +23,10 @@ namespace autosell
             novoLocal.AdicionarVeiculo(veiculo);
             veiculo.IdLocal = novoLocal.IdLocal;
         }
+
+        public static void RemoverEvento(Evento evento)
+        {
+            EVENTOS.Remove(evento);
+        }
     }
 }
