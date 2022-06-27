@@ -19,9 +19,7 @@ namespace autosell
 
         private void AutoSell_Load(object sender, EventArgs e)
         {
-            RandomHelper.PREENCHER();
             Cursor.Current = Cursors.WaitCursor;
-            cmbLojas.DataSource = Dados.LOJAS;
         }
 
         private void AutoSell_Shown(object sender, EventArgs e)
@@ -146,6 +144,10 @@ namespace autosell
         public void MostrarErro(string mensagem)
         {
             MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        public void MostrarSucesso(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
     }

@@ -140,26 +140,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 13);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 20);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Loja";
             // 
             // cmbLojas
             // 
             this.cmbLojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLojas.FormattingEnabled = true;
-            this.cmbLojas.Location = new System.Drawing.Point(50, 10);
+            this.cmbLojas.Location = new System.Drawing.Point(49, 7);
             this.cmbLojas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLojas.Name = "cmbLojas";
-            this.cmbLojas.Size = new System.Drawing.Size(189, 28);
-            this.cmbLojas.TabIndex = 6;
+            this.cmbLojas.Size = new System.Drawing.Size(166, 28);
+            this.cmbLojas.TabIndex = 4;
+            this.cmbLojas.SelectedIndexChanged += new System.EventHandler(this.cmbLojas_SelectedIndexChanged);
+            // 
             // btnConsultarVeiculo
             // 
-            this.btnConsultarVeiculo.Location = new System.Drawing.Point(347, 5);
+            this.btnConsultarVeiculo.Location = new System.Drawing.Point(397, 7);
             this.btnConsultarVeiculo.Name = "btnConsultarVeiculo";
-            this.btnConsultarVeiculo.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarVeiculo.Size = new System.Drawing.Size(86, 31);
             this.btnConsultarVeiculo.TabIndex = 4;
             this.btnConsultarVeiculo.Text = "Consultar";
             this.btnConsultarVeiculo.UseVisualStyleBackColor = true;
@@ -251,10 +254,10 @@
             // lboxTransacoes
             // 
             this.lboxTransacoes.FormattingEnabled = true;
-            this.lboxTransacoes.ItemHeight = 15;
+            this.lboxTransacoes.ItemHeight = 20;
             this.lboxTransacoes.Location = new System.Drawing.Point(0, 32);
             this.lboxTransacoes.Name = "lboxTransacoes";
-            this.lboxTransacoes.Size = new System.Drawing.Size(671, 259);
+            this.lboxTransacoes.Size = new System.Drawing.Size(671, 244);
             this.lboxTransacoes.TabIndex = 5;
             // 
             // tabEventos
@@ -299,10 +302,10 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(623, 476);
+            this.btnFinalizar.Location = new System.Drawing.Point(545, 356);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(251, 39);
+            this.btnFinalizar.Size = new System.Drawing.Size(218, 29);
             this.btnFinalizar.TabIndex = 10;
             this.btnFinalizar.Text = "Terminar e Recolher Veículos";
             this.btnFinalizar.UseVisualStyleBackColor = true;
@@ -388,26 +391,6 @@
             this.tabEstatisticas.TabIndex = 4;
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(19, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Loja";
-            // 
-            // cmbLojas
-            // 
-            this.cmbLojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLojas.FormattingEnabled = true;
-            this.cmbLojas.Location = new System.Drawing.Point(52, 38);
-            this.cmbLojas.Name = "cmbLojas";
-            this.cmbLojas.Size = new System.Drawing.Size(166, 23);
-            this.cmbLojas.TabIndex = 4;
-            this.cmbLojas.SelectedIndexChanged += new System.EventHandler(this.cmbLojas_SelectedIndexChanged);
             // 
             // AutoSell
             // 
