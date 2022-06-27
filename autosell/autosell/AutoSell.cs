@@ -26,6 +26,9 @@ namespace autosell
         {
             RandomHelper.PREENCHER();
 
+            //Clientes
+            lboxClientes.DataSource = Dados.CLIENTES;
+
             // Veículos
             cmbLojasVeiculos.DataSource = Dados.LOJAS;
 
@@ -234,15 +237,17 @@ namespace autosell
         private void btnApagarCliente_Click(object sender, EventArgs e)
         {
             if (!SelecionouCliente()) return;
+            MostrarSucesso("Cliente \"" + RemoverCliente() + "\" apagado com sucesso!");
+        }
 
-            if (MessageBox.Show("Deseja realmente apagar o cliente?", "Confirmação", MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Exclamation) == DialogResult.No)
-                return;
-
-            var cliente = (Cliente) lboxClientes.SelectedItem;
-            Dados.CLIENTES.Remove(cliente);
+        private string RemoverCliente()
+        {
+            int idx = lboxClientes.SelectedIndex;
+            Cliente cl = (Cliente) lboxClientes.Items[idx];
+            Dados.RemoverCliente(cl);
             lboxClientes.DataSource = null;
             lboxClientes.DataSource = Dados.CLIENTES;
+            return cl.Nome;
         }
 
         private bool SelecionouCliente()
