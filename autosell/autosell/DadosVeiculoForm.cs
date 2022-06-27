@@ -38,6 +38,7 @@ namespace autosell
 
             if (!consulta) return;
 
+            btnGuardar.Visible = false;
             txtMarca.Enabled = false;
             txtModelo.Enabled = false;
             txtAno.Enabled = false;
@@ -51,9 +52,43 @@ namespace autosell
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtMarca.Text == "" || txtModelo.Text == "" || txtAno.Text == "" || cmbCombustivel.SelectedItem == null ||
-                txtCor.Text == "" || txtPreco.Text == "" || txtKms.Text == "" || txtNumDonos.Text == "") {
-                MessageBox.Show("Preencha os campos obrigatórios!");
+            if (string.IsNullOrEmpty(txtMarca.Text)) {
+                MessageBox.Show("O campo marca é obrigatório");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtModelo.Text)) {
+                MessageBox.Show("O campo modelo é obrigatório");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtAno.Text)) {
+                MessageBox.Show("O campo ano é obrigatório");
+                return;
+            }
+
+            if (cmbCombustivel.SelectedItem == null) {
+                MessageBox.Show("Selecione o tipo de combustível");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtCor.Text)) {
+                MessageBox.Show("O campo cor é obrigatório");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPreco.Text)) {
+                MessageBox.Show("O campo preço é obrigatório");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtKms.Text)) {
+                MessageBox.Show("O campo kms é obrigatório");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNumDonos.Text)) {
+                MessageBox.Show("O campo número de donos é obrigatório");
                 return;
             }
 
@@ -97,7 +132,8 @@ namespace autosell
                 return;
             }
 
-            MessageBox.Show("Veículo registado com sucesso", "Registo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(_veiculoId == -1 ? "Veículo registado com sucesso!" : "Veículo alterado com sucesso!", "Sucesso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
         }
 

@@ -33,6 +33,9 @@ namespace autosell
             cmbTipoDestino.SelectedIndex = 0;
             AtualizarListaEventos();
 
+            // Clientes
+            lboxClientes.DataSource = Dados.CLIENTES;
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -40,6 +43,7 @@ namespace autosell
 
         private void btnConsultarVeiculo_Click(object sender, EventArgs e)
         {
+            if (!SelecionouVeiculo()) return;
             var dadosVeiculo = new DadosVeiculoForm(cmbLojasVeiculos.SelectedIndex, lboxVeiculos.SelectedIndex, true);
             dadosVeiculo.ShowDialog();
         }
@@ -47,6 +51,8 @@ namespace autosell
 
         private void btnAdicionarVeiculo_Click(object sender, EventArgs e)
         {
+            if (!SelecionouVeiculo()) return;
+
             var dadosVeiculo = new DadosVeiculoForm(cmbLojasVeiculos.SelectedIndex);
             dadosVeiculo.ShowDialog();
 
@@ -60,6 +66,8 @@ namespace autosell
 
         private void btnEditarVeiculo_Click(object sender, EventArgs e)
         {
+            if (!SelecionouVeiculo()) return;
+
             var dadosVeiculo = new DadosVeiculoForm(cmbLojasVeiculos.SelectedIndex, lboxVeiculos.SelectedIndex);
             dadosVeiculo.ShowDialog();
 
@@ -71,13 +79,10 @@ namespace autosell
             lboxVeiculos.DataSource = veiculos;
         }
 
-        private void cmbLojasVeiculos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojasVeiculos.SelectedIndex].Garagem;
-        }
-
         private void btnApagarVeiculo_Click(object sender, EventArgs e)
         {
+            if (!SelecionouVeiculo()) return;
+
             if (MessageBox.Show("Deseja realmente apagar o veículo?", "Confirmação", MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Exclamation) == DialogResult.No)
                 return;
@@ -86,6 +91,21 @@ namespace autosell
             Dados.LOJAS[cmbLojasVeiculos.SelectedIndex].Garagem.Remove(veiculo);
             lboxVeiculos.DataSource = null;
             lboxVeiculos.DataSource = Dados.LOJAS[cmbLojasVeiculos.SelectedIndex].Garagem;
+        }
+
+        private void cmbLojasVeiculos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lboxVeiculos.DataSource = Dados.LOJAS[cmbLojasVeiculos.SelectedIndex].Garagem;
+        }
+
+        private bool SelecionouVeiculo()
+        {
+            if (lboxVeiculos.SelectedIndex == -1) {
+                MostrarErro("Tem de selecionar um veículo!");
+                return false;
+            }
+
+            return true;
         }
 
         #endregion
@@ -117,13 +137,14 @@ namespace autosell
             if (!SelecionouEvento()) return;
             MostrarSucesso("Evento \"" + RemoverEvento() + "\" removido com sucesso!");
         }
-        
+
         private string RemoverEvento()
         {
             int idx = lstEventos.SelectedIndex;
-            Evento ev = (Evento)lstEventos.Items[idx];
+            Evento ev = (Evento) lstEventos.Items[idx];
             Dados.RemoverEvento(ev);
             lstEventos.Items.RemoveAt(idx);
+
             if (cmbTipoDestino.SelectedIndex == 1)
                 PreencherComTodosOsEventos();
             return ev.Nome;
@@ -152,6 +173,7 @@ namespace autosell
             cmbDestino.DataSource = null;
             cmbDestino.DataSource = Dados.LOJAS;
         }
+
         private void PreencherComTodosOsEventos()
         {
             cmbDestino.DataSource = null;
@@ -160,11 +182,11 @@ namespace autosell
 
         private bool SelecionouEvento()
         {
-            if (lstEventos.SelectedIndex == -1)
-            {
+            if (lstEventos.SelectedIndex == -1) {
                 MostrarErro("Tem de selecionar um evento!");
                 return false;
             }
+
             return true;
         }
 
@@ -174,18 +196,63 @@ namespace autosell
 
         private void btnConsultarCliente_Click(object sender, EventArgs e)
         {
+            if (!SelecionouCliente()) return;
+            var dadosCliente = new DadosClienteForm(lboxClientes.SelectedIndex, true);
+            dadosCliente.ShowDialog();
         }
 
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
+            if (!SelecionouCliente()) return;
+
+            var dadosCliente = new DadosClienteForm();
+            dadosCliente.ShowDialog();
+
+            var clientes = new List<Cliente>();
+
+            foreach (var cliente in Dados.CLIENTES)
+                clientes.Add(cliente);
+
+            lboxClientes.DataSource = clientes;
         }
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
+            if (!SelecionouCliente()) return;
+
+            var dadosCliente = new DadosClienteForm(lboxClientes.SelectedIndex);
+            dadosCliente.ShowDialog();
+
+            var clientes = new List<Cliente>();
+
+            foreach (var cliente in Dados.CLIENTES)
+                clientes.Add(cliente);
+
+            lboxClientes.DataSource = clientes;
         }
 
         private void btnApagarCliente_Click(object sender, EventArgs e)
         {
+            if (!SelecionouCliente()) return;
+
+            if (MessageBox.Show("Deseja realmente apagar o cliente?", "Confirmação", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Exclamation) == DialogResult.No)
+                return;
+
+            var cliente = (Cliente) lboxClientes.SelectedItem;
+            Dados.CLIENTES.Remove(cliente);
+            lboxClientes.DataSource = null;
+            lboxClientes.DataSource = Dados.CLIENTES;
+        }
+
+        private bool SelecionouCliente()
+        {
+            if (lboxClientes.SelectedIndex == -1) {
+                MostrarErro("Tem de selecionar um cliente!");
+                return false;
+            }
+
+            return true;
         }
 
         #endregion
