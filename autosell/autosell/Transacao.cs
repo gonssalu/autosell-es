@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    enum TipoTransacao
+    public enum TipoTransacao
     {
         Compra,
         Venda,
         Troca
     }
 
-    internal class Transacao
+    public class Transacao
     {
         public TipoTransacao Tipo { get; }
         public Veiculo Veiculo { get; }

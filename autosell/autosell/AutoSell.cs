@@ -134,15 +134,27 @@ namespace autosell
         private void EditarEventoClick(object sender, EventArgs e)
         {
             if (!SelecionouEvento()) return;
+            JanelaEvento je = new JanelaEvento();
+            je.EditarEsteEvento(lstEventos.SelectedIndex);
+            je.ShowDialog();
+            AtualizarListaEventos();
         }
 
         private void ConsultarEventoClick(object sender, EventArgs e)
         {
             if (!SelecionouEvento()) return;
+            JanelaEvento je = new JanelaEvento();
+            je.MostrarEsteEvento(lstEventos.SelectedIndex);
+            je.ShowDialog();
         }
 
         private void AgendarEventoClick(object sender, EventArgs e)
         {
+            if (!SelecionouEvento()) return;
+            JanelaEvento je = new JanelaEvento();
+            je.ShowDialog();
+            AtualizarListaEventos();
+            MostrarSucesso("Evento agendado com sucesso!");
         }
 
         private void btnApagarEvento_Click(object sender, EventArgs e)
@@ -198,6 +210,7 @@ namespace autosell
             }
 
             Evento ev = GetSelectedEvento();
+
             Local destino = (Local) cmbDestino.SelectedItem;
 
             if (cmbTipoDestino.SelectedIndex == 0) {
@@ -269,10 +282,20 @@ namespace autosell
                 cmbDestino.DataSource = null;
             }
             else {
-                PreencherDestino();
-                cmbTipoDestino.Enabled = true;
-                cmbDestino.Enabled = true;
-                btnFinalizar.Enabled = true;
+                if (!GetSelectedEvento().Terminado)
+                {
+                    PreencherDestino();
+                    cmbTipoDestino.Enabled = true;
+                    cmbDestino.Enabled = true;
+                    btnFinalizar.Enabled = true;
+                }
+                else
+                {
+                    cmbTipoDestino.Enabled = false;
+                    cmbDestino.Enabled = false;
+                    btnFinalizar.Enabled = false;
+                    cmbDestino.DataSource = null;
+                }
             }
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Sede : Loja
+    public class Sede : Loja
     {
         public Sede() : base("AutoSell HQ", "Rua Doutor Borges Nº 20") {} //Nº = Nota do projeto (de 0 a 20)
 

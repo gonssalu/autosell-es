@@ -29,9 +29,14 @@ namespace autosell
             EVENTOS.Remove(evento);
         }
 
-        internal static void RemoverCliente(Cliente cliente)
+        public static void RemoverCliente(Cliente cliente)
         {
             CLIENTES.Remove(cliente);
+        }
+
+        public static void GuardarEvento(Evento ev)
+        {
+            EVENTOS.Add(ev);
         }
     }
 }

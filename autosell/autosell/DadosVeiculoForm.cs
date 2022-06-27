@@ -118,7 +118,7 @@ namespace autosell
                 return;
             }
 
-            var veiculo = new Veiculo(marca, modelo, ano, combustivel, cor, preco, kms, numDonos, donoAnterior, _lojaId);
+            var veiculo = new Veiculo(marca, modelo, ano, combustivel, cor, preco, kms, numDonos, donoAnterior, Dados.LOJAS[_lojaId].IdLocal);
 
             try {
                 if (_veiculoId == -1)

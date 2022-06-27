@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace autosell
 {
-    internal class Cliente
+    public class Cliente
     {
         public String Nome { get; set; }
 

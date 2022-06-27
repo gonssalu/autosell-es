@@ -9,7 +9,7 @@ namespace autosell
     public class Local
     {
         public int IdLocal { get; }
-        public String Morada { get; }
+        public String Morada { get; set; }
         public List<Veiculo> Garagem { get; }
 
         public Local(string morada)
