@@ -42,6 +42,12 @@ namespace autosell
             // Transações
             lboxTransacoes.DataSource = Dados.TRANSACOES;
 
+            //Estatísticas
+            dtpInicio1.Value = DateTime.Now;
+            dtpInicio2.Value = DateTime.Now;
+            dtpFim1.Value = DateTime.Now;
+            dtpFim2.Value = DateTime.Now;
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -249,6 +255,24 @@ namespace autosell
             return true;
         }
 
+        private void lstEventos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstEventos.SelectedIndex == -1)
+            {
+                cmbTipoDestino.Enabled = false;
+                cmbDestino.Enabled = false;
+                btnFinalizar.Enabled = false;
+                cmbDestino.DataSource = null;
+            }
+            else
+            {
+                PreencherDestino();
+                cmbTipoDestino.Enabled = true;
+                cmbDestino.Enabled = true;
+                btnFinalizar.Enabled = true;
+            }
+        }
+
         #endregion
 
         #region Gerir Clientes
@@ -343,6 +367,28 @@ namespace autosell
 
         #endregion
 
+        #region Estatisticas
+        private void btnAtualizarEstatisticas_Click(object sender, EventArgs e)
+        {
+            if (dtpInicio1.Value > dtpFim1.Value)
+            {
+                MostrarErro("A data de início da Estatística 1 não pode ser posterior à data de fim!");
+                return;
+            }
+            if (dtpInicio2.Value > dtpFim2.Value)
+            {
+                MostrarErro("A data de início da Estatística 2 não pode ser posterior à data de fim!");
+                return;
+            }
+            PreencherEstatisticas();
+        }
+
+        private void PreencherEstatisticas()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
         #region Outras coisas
 
         private void MostrarErro(string mensagem)
@@ -356,23 +402,5 @@ namespace autosell
         }
 
         #endregion
-
-        private void lstEventos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstEventos.SelectedIndex == -1)
-            {
-                cmbTipoDestino.Enabled = false;
-                cmbDestino.Enabled = false;
-                btnFinalizar.Enabled = false;
-                cmbDestino.DataSource = null;
-            }
-            else
-            {
-                PreencherDestino();
-                cmbTipoDestino.Enabled = true;
-                cmbDestino.Enabled = true;
-                btnFinalizar.Enabled = true;
-            }
-        }
     }
 }

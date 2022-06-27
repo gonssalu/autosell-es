@@ -61,24 +61,55 @@
             this.btnAgendarEvento = new System.Windows.Forms.Button();
             this.btnApagarEvento = new System.Windows.Forms.Button();
             this.lstEventos = new System.Windows.Forms.ListBox();
-            this.tabEstatisticas = new System.Windows.Forms.TabPage();
             this.btnAtualizarEstatisticas = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEMarca1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtEModelo1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtECliente1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtETMarca1 = new System.Windows.Forms.TextBox();
+            this.txtETModelo1 = new System.Windows.Forms.TextBox();
+            this.txtETCliente1 = new System.Windows.Forms.TextBox();
+            this.txtFatTotal1 = new System.Windows.Forms.TextBox();
+            this.dtpInicio1 = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabEstatisticas = new System.Windows.Forms.TabPage();
+            this.dtpFim1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpFim2 = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtpInicio2 = new System.Windows.Forms.DateTimePicker();
+            this.txtFatTotal2 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtETCliente2 = new System.Windows.Forms.TextBox();
+            this.txtETModelo2 = new System.Windows.Forms.TextBox();
+            this.txtETMarca2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtECliente2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtEModelo2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtEMarca2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabInicio.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabVeiculos.SuspendLayout();
             this.tabTransacoes.SuspendLayout();
             this.tabEventos.SuspendLayout();
-            this.tabEstatisticas.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabEstatisticas.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -469,9 +500,173 @@
             this.lstEventos.TabIndex = 1;
             this.lstEventos.SelectedIndexChanged += new System.EventHandler(this.lstEventos_SelectedIndexChanged);
             // 
+            // btnAtualizarEstatisticas
+            // 
+            this.btnAtualizarEstatisticas.Location = new System.Drawing.Point(305, 341);
+            this.btnAtualizarEstatisticas.Name = "btnAtualizarEstatisticas";
+            this.btnAtualizarEstatisticas.Size = new System.Drawing.Size(160, 29);
+            this.btnAtualizarEstatisticas.TabIndex = 0;
+            this.btnAtualizarEstatisticas.Text = "Atualizar Estatísticas";
+            this.btnAtualizarEstatisticas.UseVisualStyleBackColor = true;
+            this.btnAtualizarEstatisticas.Click += new System.EventHandler(this.btnAtualizarEstatisticas_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.dtpFim1);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.dtpInicio1);
+            this.groupBox2.Controls.Add(this.txtFatTotal1);
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Location = new System.Drawing.Point(3, 32);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(375, 289);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Estatísticas 1";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(5, 253);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 20);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Faturação total:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtETCliente1);
+            this.groupBox1.Controls.Add(this.txtETModelo1);
+            this.groupBox1.Controls.Add(this.txtETMarca1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtECliente1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtEModelo1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtEMarca1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(5, 98);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 146);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mais Vendas";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Marca:";
+            // 
+            // txtEMarca1
+            // 
+            this.txtEMarca1.Location = new System.Drawing.Point(76, 39);
+            this.txtEMarca1.Name = "txtEMarca1";
+            this.txtEMarca1.ReadOnly = true;
+            this.txtEMarca1.Size = new System.Drawing.Size(165, 27);
+            this.txtEMarca1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Modelo:";
+            // 
+            // txtEModelo1
+            // 
+            this.txtEModelo1.Location = new System.Drawing.Point(76, 72);
+            this.txtEModelo1.Name = "txtEModelo1";
+            this.txtEModelo1.ReadOnly = true;
+            this.txtEModelo1.Size = new System.Drawing.Size(165, 27);
+            this.txtEModelo1.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Cliente:";
+            // 
+            // txtECliente1
+            // 
+            this.txtECliente1.Location = new System.Drawing.Point(76, 106);
+            this.txtECliente1.Name = "txtECliente1";
+            this.txtECliente1.ReadOnly = true;
+            this.txtECliente1.Size = new System.Drawing.Size(165, 27);
+            this.txtECliente1.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(279, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Total:";
+            // 
+            // txtETMarca1
+            // 
+            this.txtETMarca1.Location = new System.Drawing.Point(249, 39);
+            this.txtETMarca1.Name = "txtETMarca1";
+            this.txtETMarca1.ReadOnly = true;
+            this.txtETMarca1.Size = new System.Drawing.Size(105, 27);
+            this.txtETMarca1.TabIndex = 8;
+            // 
+            // txtETModelo1
+            // 
+            this.txtETModelo1.Location = new System.Drawing.Point(249, 72);
+            this.txtETModelo1.Name = "txtETModelo1";
+            this.txtETModelo1.ReadOnly = true;
+            this.txtETModelo1.Size = new System.Drawing.Size(105, 27);
+            this.txtETModelo1.TabIndex = 10;
+            // 
+            // txtETCliente1
+            // 
+            this.txtETCliente1.Location = new System.Drawing.Point(249, 105);
+            this.txtETCliente1.Name = "txtETCliente1";
+            this.txtETCliente1.ReadOnly = true;
+            this.txtETCliente1.Size = new System.Drawing.Size(105, 27);
+            this.txtETCliente1.TabIndex = 12;
+            // 
+            // txtFatTotal1
+            // 
+            this.txtFatTotal1.Location = new System.Drawing.Point(122, 250);
+            this.txtFatTotal1.Name = "txtFatTotal1";
+            this.txtFatTotal1.ReadOnly = true;
+            this.txtFatTotal1.Size = new System.Drawing.Size(247, 27);
+            this.txtFatTotal1.TabIndex = 13;
+            // 
+            // dtpInicio1
+            // 
+            this.dtpInicio1.Location = new System.Drawing.Point(52, 54);
+            this.dtpInicio1.Name = "dtpInicio1";
+            this.dtpInicio1.Size = new System.Drawing.Size(121, 27);
+            this.dtpInicio1.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(52, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 20);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Data de Início:";
+            // 
             // tabEstatisticas
             // 
-            this.tabEstatisticas.Controls.Add(this.groupBox1);
+            this.tabEstatisticas.Controls.Add(this.groupBox3);
+            this.tabEstatisticas.Controls.Add(this.groupBox2);
+            this.tabEstatisticas.Controls.Add(this.btnAtualizarEstatisticas);
             this.tabEstatisticas.Location = new System.Drawing.Point(4, 29);
             this.tabEstatisticas.Name = "tabEstatisticas";
             this.tabEstatisticas.Size = new System.Drawing.Size(768, 394);
@@ -479,91 +674,189 @@
             this.tabEstatisticas.Text = "Estatísticas";
             this.tabEstatisticas.UseVisualStyleBackColor = true;
             // 
-            // btnAtualizarEstatisticas
+            // dtpFim1
             // 
-            this.btnAtualizarEstatisticas.Location = new System.Drawing.Point(262, 75);
-            this.btnAtualizarEstatisticas.Name = "btnAtualizarEstatisticas";
-            this.btnAtualizarEstatisticas.Size = new System.Drawing.Size(160, 29);
-            this.btnAtualizarEstatisticas.TabIndex = 0;
-            this.btnAtualizarEstatisticas.Text = "Atualizar Estatísticas";
-            this.btnAtualizarEstatisticas.UseVisualStyleBackColor = true;
+            this.dtpFim1.Location = new System.Drawing.Point(194, 54);
+            this.dtpFim1.Name = "dtpFim1";
+            this.dtpFim1.Size = new System.Drawing.Size(121, 27);
+            this.dtpFim1.TabIndex = 15;
             // 
-            // label5
+            // label9
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Marca:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(194, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 20);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Data de Fim:";
             // 
-            // groupBox1
+            // groupBox3
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btnAtualizarEstatisticas);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(18, 30);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 130);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mais Vendas";
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.dtpFim2);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.dtpInicio2);
+            this.groupBox3.Controls.Add(this.txtFatTotal2);
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Location = new System.Drawing.Point(390, 32);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(375, 289);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estatísticas 2";
             // 
-            // textBox1
+            // label10
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(165, 27);
-            this.textBox1.TabIndex = 2;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(194, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 20);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Data de Fim:";
             // 
-            // textBox2
+            // dtpFim2
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(165, 27);
-            this.textBox2.TabIndex = 4;
+            this.dtpFim2.Location = new System.Drawing.Point(194, 54);
+            this.dtpFim2.Name = "dtpFim2";
+            this.dtpFim2.Size = new System.Drawing.Size(121, 27);
+            this.dtpFim2.TabIndex = 15;
             // 
-            // label6
+            // label13
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Modelo:";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(52, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 20);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Data de Início:";
             // 
-            // label7
+            // dtpInicio2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Cliente:";
+            this.dtpInicio2.Location = new System.Drawing.Point(52, 54);
+            this.dtpInicio2.Name = "dtpInicio2";
+            this.dtpInicio2.Size = new System.Drawing.Size(121, 27);
+            this.dtpInicio2.TabIndex = 14;
             // 
-            // textBox3
+            // txtFatTotal2
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(165, 27);
-            this.textBox3.TabIndex = 6;
+            this.txtFatTotal2.Location = new System.Drawing.Point(122, 250);
+            this.txtFatTotal2.Name = "txtFatTotal2";
+            this.txtFatTotal2.ReadOnly = true;
+            this.txtFatTotal2.Size = new System.Drawing.Size(247, 27);
+            this.txtFatTotal2.TabIndex = 13;
             // 
-            // label8
+            // groupBox4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(262, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
+            this.groupBox4.Controls.Add(this.txtETCliente2);
+            this.groupBox4.Controls.Add(this.txtETModelo2);
+            this.groupBox4.Controls.Add(this.txtETMarca2);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.txtECliente2);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.txtEModelo2);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.txtEMarca2);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Location = new System.Drawing.Point(5, 98);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(364, 146);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Mais Vendas";
+            // 
+            // txtETCliente2
+            // 
+            this.txtETCliente2.Location = new System.Drawing.Point(249, 105);
+            this.txtETCliente2.Name = "txtETCliente2";
+            this.txtETCliente2.ReadOnly = true;
+            this.txtETCliente2.Size = new System.Drawing.Size(105, 27);
+            this.txtETCliente2.TabIndex = 12;
+            // 
+            // txtETModelo2
+            // 
+            this.txtETModelo2.Location = new System.Drawing.Point(249, 72);
+            this.txtETModelo2.Name = "txtETModelo2";
+            this.txtETModelo2.ReadOnly = true;
+            this.txtETModelo2.Size = new System.Drawing.Size(105, 27);
+            this.txtETModelo2.TabIndex = 10;
+            // 
+            // txtETMarca2
+            // 
+            this.txtETMarca2.Location = new System.Drawing.Point(249, 39);
+            this.txtETMarca2.Name = "txtETMarca2";
+            this.txtETMarca2.ReadOnly = true;
+            this.txtETMarca2.Size = new System.Drawing.Size(105, 27);
+            this.txtETMarca2.TabIndex = 8;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(279, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 20);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Total:";
+            // 
+            // txtECliente2
+            // 
+            this.txtECliente2.Location = new System.Drawing.Point(76, 106);
+            this.txtECliente2.Name = "txtECliente2";
+            this.txtECliente2.ReadOnly = true;
+            this.txtECliente2.Size = new System.Drawing.Size(165, 27);
+            this.txtECliente2.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 109);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 20);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Cliente:";
+            // 
+            // txtEModelo2
+            // 
+            this.txtEModelo2.Location = new System.Drawing.Point(76, 72);
+            this.txtEModelo2.Name = "txtEModelo2";
+            this.txtEModelo2.ReadOnly = true;
+            this.txtEModelo2.Size = new System.Drawing.Size(165, 27);
+            this.txtEModelo2.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 75);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 20);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Modelo:";
+            // 
+            // txtEMarca2
+            // 
+            this.txtEMarca2.Location = new System.Drawing.Point(76, 39);
+            this.txtEMarca2.Name = "txtEMarca2";
+            this.txtEMarca2.ReadOnly = true;
+            this.txtEMarca2.Size = new System.Drawing.Size(165, 27);
+            this.txtEMarca2.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 42);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 20);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Marca:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(5, 253);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 20);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Faturação total:";
             // 
             // AutoSell
             // 
@@ -586,9 +879,15 @@
             this.tabTransacoes.ResumeLayout(false);
             this.tabEventos.ResumeLayout(false);
             this.tabEventos.PerformLayout();
-            this.tabEstatisticas.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabEstatisticas.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -603,7 +902,6 @@
         private TabPage tabVeiculos;
         private TabPage tabTransacoes;
         private TabPage tabEventos;
-        private TabPage tabEstatisticas;
         private Button btnAdicionarVeiculo;
         private Button btnApagarVeiculo;
         private ListBox lboxVeiculos;
@@ -630,14 +928,43 @@
         private Button btnAdicionarCliente;
         private Button btnApagarCliente;
         private Button btnTroca;
-        private Button btnAtualizarEstatisticas;
+        private TabPage tabEstatisticas;
+        private GroupBox groupBox3;
+        private Label label10;
+        private DateTimePicker dtpFim2;
+        private Label label13;
+        private DateTimePicker dtpInicio2;
+        private TextBox txtFatTotal2;
+        private GroupBox groupBox4;
+        private TextBox txtETCliente2;
+        private TextBox txtETModelo2;
+        private TextBox txtETMarca2;
+        private Label label14;
+        private TextBox txtECliente2;
+        private Label label15;
+        private TextBox txtEModelo2;
+        private Label label16;
+        private TextBox txtEMarca2;
+        private Label label17;
+        private Label label18;
+        private GroupBox groupBox2;
+        private Label label9;
+        private DateTimePicker dtpFim1;
+        private Label label12;
+        private DateTimePicker dtpInicio1;
+        private TextBox txtFatTotal1;
         private GroupBox groupBox1;
+        private TextBox txtETCliente1;
+        private TextBox txtETModelo1;
+        private TextBox txtETMarca1;
         private Label label8;
-        private TextBox textBox3;
+        private TextBox txtECliente1;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox txtEModelo1;
         private Label label6;
-        private TextBox textBox1;
+        private TextBox txtEMarca1;
         private Label label5;
+        private Label label11;
+        private Button btnAtualizarEstatisticas;
     }
 }
